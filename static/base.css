@@ -8,35 +8,32 @@
 body,
 html {
   height: 100%;
-  font-family: "Arial", sans-serif;
+  font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
 }
 
 /* 2. NAVIGACIJSKA TRAKA (NAVBAR) */
 .navbar {
-  position: fixed; /* Fiksiran na vrhu dok skrolaš */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-
-  /* Zatamnjivanje i Blur da se sakrije RTVHB logo */
-  background: rgba(0, 0, 0, 0.67); /* 80% crna prozirnost */
-  backdrop-filter: blur(10px); /* Zamuti ono što se vidi iza */
-  -webkit-backdrop-filter: blur(10px);
-
-  /* Visina i razmaci */
-  padding: 37px 0; /* Povećaj prvu brojku ako trebaš još "produžiti" prema dolje */
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 25px 0; /* Smanjio sam malo padding radi boljeg izgleda, podesi po želji */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container {
   display: flex;
-  justify-content: space-between; /* Logo skroz lijevo, linkovi skroz desno */
+  justify-content: space-between; /* Ovo šalje logo lijevo, a linkove desno */
   align-items: center;
-  max-width: 1200px; /* Centrirani dio u kojem je sadržaj */
-  margin: 0 auto;
-  padding: 0 40px;
+  width: 100%; /* Osigurava da kontejner zauzima cijelu širinu */
+  max-width: 100%; /* UKLONJENO 1200px da bi išlo do rubova */
+  padding: 0 50px; /* Razmak od lijevog i desnog ruba ekrana */
+  margin: 0; /* Više nam ne treba margin: 0 auto jer ne centriramo fiksni boks */
 }
 
 /* Stil za logo unutar navbar-a */
@@ -48,10 +45,11 @@ html {
   font-weight: bold;
   font-size: 1.5rem;
   text-transform: uppercase;
+  white-space: nowrap; /* Sprječava da "NK TROGLAV" ode u novi red */
 }
 
 .nav-logo img {
-  height: 60px; /* Ovdje podešavaš veličinu svog logotipa */
+  height: 80px; /* Malo smanjena visina da izgleda elegantnije */
   width: auto;
   margin-right: 15px;
 }
@@ -60,6 +58,7 @@ html {
   list-style: none;
   display: flex;
   gap: 30px;
+  margin-left: auto; /* Dodatna sigurnost da gura sve udesno */
 }
 
 .nav-links a {
@@ -75,36 +74,3 @@ html {
   color: #cc0000; /* Boja NK Troglava pri prelasku mišem */
 }
 
-/* 3. VIDEO SEKCIJA */
-.video-hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ključno za Full Screen bez rastezanja */
-  z-index: -2;
-}
-
-/* Sloj preko videa (opcionalno dodatno zatamnjivanje cijelog videa) */
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.6) 0%,
-    /* Tamnije na vrhu kod navbara */ rgba(0, 0, 0, 0) 30%
-  );
-  z-index: -1;
-  pointer-events: none;
-}
