@@ -57,7 +57,7 @@ body {
   align-items: flex-start; /* Ovo osigurava da sadržaj kreće od vrha, a ne da se centrira */
   
   /* Povećavamo padding na 220px da dobijemo taj "mali razmak više" koji tražiš */
-  padding-top: 220px; 
+  padding-top: 190px; 
   
   padding-bottom: 80px;
   box-sizing: border-box;

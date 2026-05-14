@@ -2,33 +2,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}{% endblock title %}</title>
-  <link rel="stylesheet" href="{%static "base.css"%}">
-  {% block css_files %}{% endblock css_files %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}NK Troglav 1918{% endblock title %}</title>
+    
+    <!-- FontAwesome za ikone (strelice) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    {% block css_files %}{% endblock css_files %}
 </head>
 <body>
- 
+
 <nav class="navbar">
     <div class="nav-container">
         <a href="/" class="nav-logo">
             <img src="{% static 'aplikacija/slike/troglav-logo.png' %}" alt="NK Troglav Logo">
-            <span class="logo-text">NK TROGLAV</span> </a>
+            <span class="logo-text">NK TROGLAV</span>
+        </a>
         
         <ul class="nav-links">
             <li><a href="#">Početna</a></li>
-            <li><a href="#">Klub</a></li>
+            
+            <!-- Padajući izbornik: KLUB -->
+            <li class="dropdown">
+                <a href="#">Klub <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Povijest kluba</a></li>
+                    <li><a href="#">Uprava</a></li>
+                    <li><a href="#">Stadion Zgoni</a></li>
+                    <li><a href="#">Trofeji</a></li>
+                </ul>
+            </li>
+
+            <!-- Padajući izbornik: NOGOMETNA ŠKOLA -->
+            <li class="dropdown">
+                <a href="#">Nogometna Škola <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Juniori</a></li>
+                    <li><a href="#">Kadeti</a></li>
+                </ul>
+            </li>
+
             <li><a href="#">Utakmice</a></li>
             <li><a href="#">Kontakt</a></li>
         </ul>
     </div>
 </nav>
 
+<main>
+    {% block content %}
+    {% endblock content %}
+</main>
 
- {% block content %}
-  {% endblock content %}
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- Logo i Ime kluba -->
+        <div class="footer-section brand-info">
+            <div class="footer-logo-box">
+                <img src="{% static 'aplikacija/slike/troglav-logo.png' %}" alt="NK Troglav Logo">
+            </div>
+            <div class="brand-text">
+                <h3>NK TROGLAV</h3>
+                <p>LIVNO</p>
+            </div>
+        </div>
+
+        <!-- Brzi linkovi -->
+        <div class="footer-section">
+            <h4>Brzi linkovi</h4>
+            <ul>
+                <li><a href="#">Upisi</a></li>
+                <li><a href="#">Škola nogometa</a></li>
+                <li><a href="#">Članstvo</a></li>
+                <li><a href="#">Vijesti</a></li>
+                <li><a href="#">Registracija</a></li>
+                <li><a href="#">Preuzmi aplikaciju</a></li>
+                <li><a href="#">Raspored treninga</a></li>
+            </ul>
+        </div>
+
+        <!-- Momčadi -->
+        <div class="footer-section">
+            <h4>Momčadi</h4>
+            <ul>
+                <li><a href="#">Seniori</a></li>
+                <li><a href="#">Juniori</a></li>
+                <li><a href="#">Kadeti</a></li>
+            </ul>
+        </div>
+
+        <!-- Kontakt -->
+        <div class="footer-section contact-info">
+            <h4>Kontakt</h4>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Zgon 1, 80101 Livno</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@nktroglav1918.ba</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+387 34 201 111</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donji dio footera -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-container">
+            <div class="copyright">
+                <p>© 2026 NK Troglav Livno. Sva prava pridržana</p>
+                <p class="small-text">Ova web stranica je izrađena za NK Troglav Livno</p>
+            </div>
+            <div class="footer-legal">
+                <a href="#">Impresum</a>
+                <a href="#">Politika privatnosti</a>
+                <a href="#">Uvjeti korištenja</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
-
 </html>
