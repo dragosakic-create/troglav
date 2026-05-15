@@ -3,7 +3,7 @@
 .junior-hero-section {
     /* Prvi broj (160px) kontroliše razmak od vrha ekrana/navbara */
     /* Ako je navbar jako visok, povećaj ovaj broj na 180px ili 200px */
-    padding: 160px 20px 40px 20px; 
+    padding: 200px 20px 40px 20px; 
     
     margin-top: 0; /* Obavezno resetuj marginu na 0 */
     background-color: #0d1117; 
@@ -85,6 +85,7 @@
 
 
 /*tablica css*/
+
 /* Zajednički kontejner za sadržaj */
 .junior-content-section {
     padding: 20px;
@@ -190,6 +191,50 @@
     font-size: 1.1rem;
     margin: 0;
     font-weight: 700;
+}
+
+/* NOVO: Stilovi za listu utakmica s logotipima */
+.match-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.match-list-row {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    align-items: center;
+    background-color: #121625;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid #1a2035;
+}
+
+.list-team {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.list-team img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.list-team.left { justify-content: flex-end; text-align: right; }
+.list-team.right { justify-content: flex-start; text-align: left; }
+
+.list-score {
+    background-color: #1e2538;
+    color: #ffffff;
+    font-weight: 800;
+    padding: 8px 0;
+    border-radius: 8px;
+    text-align: center;
 }
 
 /* Stilovi za bočne widgete (Desna strana) */
@@ -504,4 +549,95 @@
   .junior-glass-wrapper {
     grid-template-columns: 1fr; 
   }
+}
+
+/* Glavni kontejner koji drži cijelu sekciju */
+.container2 {
+    background-color: #0f121d; /* Tamna boja pozadine stranice */
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Naslov "Statistika sezone" s crvenom linijom */
+.section-title2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-transform: none;
+}
+
+.section-title2::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 24px;
+    background-color: #e63946; /* Crveni detalj */
+    margin-right: 15px;
+    border-radius: 2px;
+}
+
+/* Grid sustav za tri kartice u redu */
+.stats-grid2 {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Omogućuje prebacivanje u novi red na mobitelu */
+}
+
+/* Stil same kartice (npr. Najbolji strijelci) */
+.stat-card2 {
+    background-color: #1a1f2e; /* Nešto svjetlija tamna boja za kartice */
+    border-radius: 15px;
+    padding: 25px;
+    flex: 1;
+    min-width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-title2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Stil svakog pojedinačnog reda (Igrač - Broj) */
+.list-item2 {
+    background-color: #252b3d; /* Još svjetlija boja za redove unutar kartice */
+    margin-bottom: 12px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* Gura ime lijevo, a broj desno */
+    align-items: center;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.list-item2:hover {
+    background-color: #2e364d; /* Efekt na prijelaz mišem */
+}
+
+/* Stil za brojke (golovi i minute) */
+.value2 {
+    color: #e63946; /* Crvena boja za isticanje rezultata */
+    font-weight: bold;
+}
+
+/* Stil za sekciju gdje nema podataka (Asistencije) */
+.no-data2 {
+    background-color: #252b3d;
+    border: 1px dashed #3d445a;
+    color: #8b949e;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-top: 10px;
 }

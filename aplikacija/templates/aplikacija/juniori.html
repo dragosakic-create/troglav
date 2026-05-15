@@ -17,7 +17,7 @@
         
         <!-- Desna strana sa grbom kluba -->
         <div class="junior-hero-logo-box">
-            <img src="{% static 'aplikacija/slike/troglav.png' %}" alt="NK Troglav 1918" class="junior-hero-logo">
+            <img src="{% static 'aplikacija/slike/troglav-logo.png' %}" alt="NK Troglav 1918" class="junior-hero-logo">
         </div>
     </div>
 </section>
@@ -28,34 +28,49 @@
         
         <!-- LIJEVA STRANA: Glavna utakmica kola -->
         <div class="main-match-box">
-            <div class="match-header">
-                <span class="match-league-top">31. KOLO · OMLADINSKA LIGA JUNIORA BIH - "JUG"</span>
-                <h2 class="match-round-title">31. kolo</h2>
-                <span class="match-league-sub">Omladinska Liga Juniora BiH - "Jug"</span>
+    <div class="match-header">
+        <span class="match-league-top">DRUGA LIGA FBIH - JUG</span>
+        <h2 class="match-round-title">22. KOLO</h2>
+    </div>
+    
+    <div class="match-list-container">
+        <div class="match-list-row">
+            <div class="list-team left">
+                <span>NK TROGLAV 1918</span>
+                <img src="{% static 'aplikacija/slike/troglav-logo.png' %}" alt="Troglav">
             </div>
-            
-            <div class="match-card-body">
-                <div class="match-day">SAT</div>
-                <div class="match-time">12:30</div>
-                <div class="match-date">Nedjelja, 17.05.2026.</div>
-                
-                <div class="teams-display">
-                    <div class="team-club">
-                        <div class="team-logo-wrapper">
-                            <img src="{% static 'aplikacija/slike/capljina-logo.png' %}" alt="HNK Čapljina">
-                        </div>
-                        <h3>HNK ČAPLJINA</h3>
-                    </div>
-                    
-                    <div class="team-club">
-                        <div class="team-logo-wrapper">
-                            <img src="{% static 'aplikacija/slike/troglav-logo.png' %}" alt="HNK Tomislav">
-                        </div>
-                        <h3>NK TROGLAV</h3>
-                    </div>
-                </div>
+            <div class="list-score">1 : 1</div>
+            <div class="list-team right">
+                <img src="{% static 'aplikacija/slike/capljina-logo.png' %}" alt="Čapljina">
+                <span>HNK ČAPLJINA</span>
             </div>
         </div>
+
+        <div class="match-list-row">
+            <div class="list-team left">
+                <span>HNK KRUŠEVO</span>
+                <img src="{% static 'aplikacija/slike/krusevo.png' %}" alt="Kruševo">
+            </div>
+            <div class="list-score">2 : 1</div>
+            <div class="list-team right">
+                <img src="{% static 'aplikacija/slike/tomislav.png' %}" alt="Višići">
+                <span>HNK TOMISLAV</span>
+            </div>
+        </div>
+
+        <div class="match-list-row">
+            <div class="list-team left">
+                <span>HNK STOLAC</span>
+                <img src="{% static 'aplikacija/slike/stolac2.png' %}" alt="Stolac">
+            </div>
+            <div class="list-score">0 : 0</div>
+            <div class="list-team right">
+                <img src="{% static 'aplikacija/slike/brotnjo.png' %}" alt="Brotnjo">
+                <span>HNK BROTNJO</span>
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- DESNA STRANA: Bočni widgeti -->
         <div class="sidebar-widgets">
@@ -218,7 +233,66 @@
     </div>
 </section>
 
+<div class="container2">
+    <h2 class="section-title2">Statistika sezone</h2>
 
+    <div class="stats-grid2">
+        <div class="stat-card2">
+            <h3 class="card-title2">Najbolji strijelci</h3>
+            <div class="list-item2">
+                <span>Nijaz Đugum</span>
+                <span class="value2">29 golova</span>
+            </div>
+            <div class="list-item2">
+                <span>Jozo Matić</span>
+                <span class="value2">17 golova</span>
+            </div>
+            <div class="list-item2">
+                <span>Mario Šteko</span>
+                <span class="value2">11 golova</span>
+            </div>
+            <div class="list-item2">
+                <span>Ajman Karalić</span>
+                <span class="value2">9 golova</span>
+            </div>
+            <div class="list-item2">
+                <span>Marko Bagarić</span>
+                <span class="value2">4 golova</span>
+            </div>
+        </div>
+
+        <div class="stat-card2">
+            <h3 class="card-title2">Asistencije</h3>
+            <div class="no-data2">
+                Nema dostupnih podataka.
+            </div>
+        </div>
+
+        <div class="stat-card2">
+            <h3 class="card-title2">Minute na terenu</h3>
+            <div class="list-item2">
+                <span>Kažimir Budimir</span>
+                <span class="value2">2430 min.</span>
+            </div>
+            <div class="list-item2">
+                <span>Ajman Karalić</span>
+                <span class="value2">2390 min.</span>
+            </div>
+            <div class="list-item2">
+                <span>Nijaz Đugum</span>
+                <span class="value2">2281 min.</span>
+            </div>
+            <div class="list-item2">
+                <span>Petar Križanac</span>
+                <span class="value2">2167 min.</span>
+            </div>
+            <div class="list-item2">
+                <span>Ivano Sušilović</span>
+                <span class="value2">2090 min.</span>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
