@@ -1,0 +1,507 @@
+/* Pozadina cele sekcije koja prati širinu stranice */
+/* Pozadina cijele sekcije s dodanim gornjim razmakom da pobjegne ispod navbar-a */
+.junior-hero-section {
+    /* Prvi broj (160px) kontroliše razmak od vrha ekrana/navbara */
+    /* Ako je navbar jako visok, povećaj ovaj broj na 180px ili 200px */
+    padding: 160px 20px 40px 20px; 
+    
+    margin-top: 0; /* Obavezno resetuj marginu na 0 */
+    background-color: #0d1117; 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+/* Kontejner zaključan na 1000px, isto kao i tablice ispod */
+.junior-hero-container {
+    width: 100%;
+    max-width: 1000px;
+    background: linear-gradient(135deg, #161b22 0%, #111424 100%); 
+    border-radius: 20px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+/* Tekstualni deo */
+.junior-hero-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.junior-hero-title {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    font-family: "Inter", sans-serif;
+}
+
+.junior-hero-subtitle {
+    color: #8b949e; 
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Okvir za grb kluba koji sprečava bežanje i preklapanje */
+.junior-hero-logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;   /* Fiksna širina okvira */
+    height: 120px;  /* Fiksna visina okvira */
+}
+
+/* Sam grb unutar okvira */
+.junior-hero-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Čuva originalne proporcije grba */
+}
+
+/* Prilagodba za tablete i mobitele */
+@media (max-width: 768px) {
+    .junior-hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .junior-hero-text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .junior-hero-logo-box {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+
+/*tablica css*/
+/* Zajednički kontejner za sadržaj */
+.junior-content-section {
+    padding: 20px;
+    background-color: #0b0f19;
+    display: flex;
+    justify-content: center;
+}
+
+.junior-content-container {
+    width: 100%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 20px;
+}
+
+/* Stilovi za glavnu utakmicu (Lijeva strana) */
+.main-match-box {
+    background: linear-gradient(135deg, #161c2e 0%, #0f1322 100%);
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid #1e2538;
+}
+
+.match-header {
+    border-bottom: 1px solid #1e2538;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.match-league-top {
+    font-size: 0.75rem;
+    color: #565e73;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.match-round-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin: 5px 0;
+    font-weight: 700;
+}
+
+.match-league-sub {
+    font-size: 0.85rem;
+    color: #8a8f9d;
+}
+
+.match-card-body {
+    text-align: center;
+}
+
+.match-day {
+    font-size: 0.8rem;
+    color: #565e73;
+    letter-spacing: 2px;
+}
+
+.match-time {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 5px 0;
+}
+
+.match-date {
+    color: #8a8f9d;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+}
+
+.teams-display {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.team-club {
+    flex: 1;
+    background-color: #121625;
+    border-radius: 12px;
+    padding: 30px 15px;
+    border: 1px solid #1a2035;
+}
+
+.team-logo-wrapper {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.team-logo-wrapper img {
+    max-height: 100%;
+    max-width: 90px;
+    object-fit: contain;
+}
+
+.team-club h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Stilovi za bočne widgete (Desna strana) */
+.sidebar-widgets {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.widget-card {
+    background-color: #161c2e;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid #1e2538;
+}
+
+.widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.widget-header h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.widget-header p {
+    color: #565e73;
+    font-size: 0.7rem;
+    margin: 3px 0 0 0;
+}
+
+.widget-badge {
+    background-color: #1e2538;
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+}
+
+/* Forme (Krugovi P, N, I) */
+.form-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.form-circle.win { background-color: #10b981; }
+.form-circle.draw { background-color: #6b7280; }
+.form-circle.loss { background-color: #ef4444; }
+
+/* Mini statistika unutar widgeta */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #111524;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-item strong {
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
+.stat-item span {
+    color: #565e73;
+    font-size: 0.75rem;
+    margin-top: 2px;
+}
+
+/* Sljedeća utakmica detalji */
+.next-match-sub-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #565e73;
+    margin-bottom: 15px;
+    background-color: #111524;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.mini-match-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #111524;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.mini-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+
+.mini-team img {
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.mini-team span {
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.mini-score {
+    text-align: center;
+    padding: 0 10px;
+}
+
+.mini-time-text {
+    color: #8a8f9d;
+    font-size: 0.75rem;
+    display: block;
+}
+
+.score-dots {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Ligaška tablica widget */
+.table-position-box {
+    display: flex;
+    align-items: baseline;
+    margin-top: 10px;
+}
+
+.current-pos {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.total-teams {
+    color: #565e73;
+    font-size: 1.1rem;
+    margin-left: 5px;
+}
+
+/* Responzivnost za tablete i mobitele */
+@media (max-width: 850px) {
+    .junior-content-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .teams-display {
+        flex-direction: column;
+    }
+}
+
+/*  TABLICA ISPOD */
+/* Pozadina sekcije */
+.junior-league-data-section {
+  background-color: #0d1117; 
+  padding: 40px 20px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+/* NOVO: Ovaj dio drži širinu zaključanom na 1000px i ne dopušta širenje */
+.junior-container-fixed {
+  width: 100%;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+}
+
+/* Unutrašnji raspored tablica */
+.junior-glass-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; 
+  gap: 30px; 
+  background: #161b22; 
+  padding: 30px; 
+  border-radius: 30px; 
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.junior-data-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px; 
+  padding: 0 10px;
+}
+
+.junior-current-round {
+  font-weight: 700;
+  font-size: 1.1rem; 
+  letter-spacing: 1px;
+}
+
+.junior-round-nav {
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0 10px;
+}
+
+.junior-match-card {
+  background: #21262d; 
+  border-radius: 20px; 
+  padding: 20px; 
+  margin-bottom: 15px; 
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.junior-match-team {
+  font-weight: 600;
+  font-size: 0.9rem; 
+  text-transform: uppercase;
+}
+
+.junior-match-score-box {
+  background: #0d1117;
+  padding: 8px 20px; 
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 20px;
+  text-align: center;
+}
+
+.junior-table-container {
+  background: #161b22;
+}
+
+.junior-league-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px; 
+}
+
+.junior-league-table th {
+  color: #8b949e;
+  font-size: 0.75rem; 
+  text-transform: uppercase;
+  padding: 10px;
+  text-align: center;
+}
+
+.junior-league-table td {
+  padding: 15px 10px; 
+  background: transparent;
+  text-align: center;
+  font-size: 0.9rem; 
+}
+
+.junior-user-team {
+  background: #1f2937 !important; 
+  color: #58a6ff !important; 
+  font-weight: bold;
+}
+
+.junior-user-team td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-left: 4px solid #58a6ff;
+}
+
+.junior-user-team td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.junior-pos {
+  color: #3fb950;
+  font-weight: bold;
+}
+
+.junior-nav {
+  color: #f85149;
+  font-weight: bold;
+}
+
+@media (max-width: 850px) {
+  .junior-glass-wrapper {
+    grid-template-columns: 1fr; 
+  }
+}
