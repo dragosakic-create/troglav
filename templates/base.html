@@ -22,7 +22,7 @@
         </a>
         
         <ul class="nav-links">
-            <li><a href="#">Početna</a></li>
+            <li><a href="{% url 'pocetna' %}">Početna</a></li>
             
             <!-- Padajući izbornik: KLUB -->
             <li class="dropdown">
@@ -40,7 +40,7 @@
                 <a href="#">Nogometna Škola <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="{% url 'juniori' %}">Juniori</a></li>
-                    <li><a href="#">Kadeti</a></li>
+                    <li><a href="{% url 'kadeti' %}">Kadeti</a></li>
                 </ul>
             </li>
 

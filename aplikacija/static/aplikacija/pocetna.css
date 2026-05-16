@@ -603,3 +603,55 @@ body {
   font-weight: 600;
   letter-spacing: 1px;
 }
+
+/* Kontejner koji centrira gumb ispod sponzora */
+.sponsors-more {
+    text-align: center;
+    padding: 30px 0;
+    width: 100%;
+}
+
+/* Stil za gumb Pogledaj više */
+.btn-more {
+    display: inline-block;
+    padding: 12px 34px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    
+    /* Stakleni efekt (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Suptilni plavi rub koji paše uz ostatak dizajna */
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 50px;
+    
+    /* Glatki prijelaz za hover animaciju */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efekt kad se mišem prijeđe preko gumba */
+.btn-more:hover {
+    color: #ffffff;
+    background: rgba(0, 212, 255, 0.15); /* Blago plavkasto staklo */
+    border-color: rgba(0, 212, 255, 0.8); /* Svijetlo plavi neonski rub */
+    
+    /* Plavi sjaj koji prati stil tvojih kartica i trenera */
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 
+                0 6px 20px rgba(0, 0, 0, 0.4);
+                
+    transform: translateY(-3px); /* Gumb se lagano podigne */
+    cursor: pointer;
+}
+
+/* Efekt kad se gumb klikne */
+.btn-more:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}

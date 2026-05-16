@@ -1,0 +1,402 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+ <link rel="stylesheet" href="{% static 'aplikacija/kadeti.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+<section class="junior-hero-section">
+    <div class="junior-hero-container">
+        <!-- Lijeva strana s tekstom kluba i selekcije -->
+        <div class="junior-hero-text">
+            <h1 class="junior-hero-title">Kadeti</h1>
+            <p class="junior-hero-subtitle">Kadeti - Aktualna sezona, raspored i statistika</p>
+        </div>
+        
+        <!-- Desna strana sa grbom kluba -->
+        <div class="junior-hero-logo-box">
+            <img src="{% static 'aplikacija/slike/troglav-logo.png' %}" alt="NK Troglav 1918" class="junior-hero-logo">
+        </div>
+    </div>
+</section>
+<section class="junior-content-section">
+    <div class="junior-content-container">
+        
+        <div class="main-match-box">
+            <div class="match-header">
+                <span class="match-league-top">OMLADINSKA LIGA BIH KADETI - JUG</span>
+                <h2 class="match-round-title">22. KOLO</h2>
+            </div>
+            
+            <div class="match-list-container">
+                <div class="match-list-row">
+                    <div class="list-team left">
+                        <span>NK TROGLAV 1918</span>
+                        <img src="{% static 'aplikacija/slike/troglav-logo.png' %}" alt="Troglav">
+                    </div>
+                    <div class="list-score">2 : 0</div>
+                    <div class="list-team right">
+                        <img src="{% static 'aplikacija/slike/capljina-logo.png' %}" alt="Čapljina">
+                        <span>HNK ČAPLJINA</span>
+                    </div>
+                </div>
+
+                <div class="match-list-row">
+                    <div class="list-team left">
+                        <span>HNK KRUŠEVO</span>
+                        <img src="{% static 'aplikacija/slike/krusevo.png' %}" alt="Kruševo">
+                    </div>
+                    <div class="list-score">1 : 3</div>
+                    <div class="list-team right">
+                        <img src="{% static 'aplikacija/slike/tomislav.png' %}" alt="Tomislav">
+                        <span>HNK TOMISLAV</span>
+                    </div>
+                </div>
+
+                <div class="match-list-row">
+                    <div class="list-team left">
+                        <span>HNK STOLAC</span>
+                        <img src="{% static 'aplikacija/slike/stolac2.png' %}" alt="Stolac">
+                    </div>
+                    <div class="list-score">1 : 2</div>
+                    <div class="list-team right">
+                        <img src="{% static 'aplikacija/slike/brotnjo.png' %}" alt="Brotnjo">
+                        <span>HNK BROTNJO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-widgets">
+            
+            <div class="widget-card">
+                <div class="widget-header">
+                    <div>
+                        <h3>Pregled kola</h3>
+                        <p>OMLADINSKA LIGA KADETA BIH - "JUG"</p>
+                    </div>
+                    <span class="widget-badge">22</span>
+                </div>
+                <div class="form-row">
+                    <span class="form-circle win">P</span>
+                    <span class="form-circle draw">N</span>
+                    <span class="form-circle win">P</span>
+                    <span class="form-circle loss">I</span>
+                    <span class="form-circle win">P</span>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-item"><strong>13</strong><span>Pobjede</span></div>
+                    <div class="stat-item"><strong>4</strong><span>Neriješeno</span></div>
+                    <div class="stat-item"><strong>5</strong><span>Porazi</span></div>
+                </div>
+            </div>
+
+            <div class="widget-card">
+                <div class="widget-header">
+                    <h3>📅 Sljedeća utakmica</h3>
+                </div>
+                <div class="next-match-sub-bar">
+                    <span>23.05.2026.</span>
+                    <span>23. KOLO</span>
+                </div>
+                <div class="mini-match-row">
+                    <div class="mini-team">
+                        <img src="{% static 'aplikacija/slike/troglav-logo.png' %}" alt="NK TROGLAV">
+                        <span>NK TROGLAV</span>
+                    </div>
+                    <div class="mini-score">
+                        <span class="mini-time-text">10:00</span>
+                        <span class="score-dots">:</span>
+                    </div>
+                    <div class="mini-team">
+                        <img src="{% static 'aplikacija/slike/goskgabela.png' %}" alt="NK GOŠK GABELA">
+                        <span>NK GOŠK GABELA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget-card">
+                <div class="widget-header">
+                    <h3>📊 Ligaška tablica</h3>
+                </div>
+                <div class="table-position-box">
+                    <span class="current-pos">3</span>
+                    <span class="total-teams">/ 11</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="junior-league-data-section">
+    <div class="junior-container-fixed">
+        <div class="junior-glass-wrapper">
+            
+            <div class="junior-results-container">
+                <div class="junior-data-header">
+                    <span class="junior-round-nav">‹</span>
+                    <span class="junior-current-round">22. KOLO</span>
+                    <span class="junior-round-nav">›</span>
+                </div>
+                
+                <div class="junior-match-card">
+                    <div class="junior-match-team" style="text-align: right;">NK TROGLAV 1918</div>
+                    <div class="junior-match-score-box">2 : 0</div>
+                    <div class="junior-match-team" style="text-align: left;">HNK ČAPLJINA</div>
+                </div>
+
+                <div class="junior-match-card">
+                    <div class="junior-match-team" style="text-align: right;">HNK KRUŠEVO</div>
+                    <div class="junior-match-score-box">1 : 3</div>
+                    <div class="junior-match-team" style="text-align: left;">HNK TOMISLAV</div>
+                </div>
+
+                <div class="junior-match-card">
+                    <div class="junior-match-team" style="text-align: right;">HNK STOLAC</div>
+                    <div class="junior-match-score-box">1 : 2</div>
+                    <div class="junior-match-team" style="text-align: left;">HNK BROTNJO</div>
+                </div>
+            </div>
+
+            <div class="junior-table-container">
+                <div class="junior-data-header">
+                    <span class="junior-current-round">OMLADINSKA LIGA BIH KADETI - JUG</span>
+                </div>
+                <div class="junior-table-responsive">
+                    <table class="junior-league-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th style="text-align: left;">KLUB</th>
+                                <th>OU</th>
+                                <th>GR</th>
+                                <th>BOD</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    <tr>
+        <td>1</td>
+        <td style="text-align: left;">FK IGMAN</td>
+        <td>27</td>
+        <td class="junior-pos">+108</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td style="text-align: left;">NK ŠIROKI BRIJEG</td>
+        <td>27</td>
+        <td class="junior-pos">+69</td>
+        <td>66</td>
+    </tr>
+    <tr class="junior-user-team">
+        <td>3</td>
+        <td style="text-align: left;">NK TROGLAV 1918</td>
+        <td>27</td>
+        <td class="junior-pos">+79</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td style="text-align: left;">HNK SLOGA</td>
+        <td>28</td>
+        <td class="junior-pos">+76</td>
+        <td>60</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td style="text-align: left;">NK MEĐUGORJE</td>
+        <td>27</td>
+        <td class="junior-pos">+36</td>
+        <td>52</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td style="text-align: left;">NK GOŠK</td>
+        <td>27</td>
+        <td class="junior-pos">+24</td>
+        <td>44</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td style="text-align: left;">HNK GRUDE</td>
+        <td>28</td>
+        <td class="junior-pos">+35</td>
+        <td>43</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td style="text-align: left;">HNK TOMISLAV</td>
+        <td>27</td>
+        <td class="junior-pos">+56</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td style="text-align: left;">HNK BROTNJO</td>
+        <td>28</td>
+        <td class="junior-neg">-1</td>
+        <td>36</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td style="text-align: left;">FK LEOTAR</td>
+        <td>26</td>
+        <td class="junior-pos">+14</td>
+        <td>34</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td style="text-align: left;">FK HERCEGOVAC</td>
+        <td>27</td>
+        <td class="junior-neg">-22</td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td style="text-align: left;">HNK STOLAC</td>
+        <td>26</td>
+        <td class="junior-neg">-28</td>
+        <td>27</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td style="text-align: left;">FK VELEŽ</td>
+        <td>27</td>
+        <td class="junior-neg">-50</td>
+        <td>27</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td style="text-align: left;">NK LJUBUŠKI</td>
+        <td>27</td>
+        <td class="junior-neg">-73</td>
+        <td>23</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td style="text-align: left;">HNK ČAPLJINA</td>
+        <td>26</td>
+        <td class="junior-neg">-86</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td style="text-align: left;">HNK KRUŠEVO</td>
+        <td>27</td>
+        <td class="junior-neg">-237</td>
+        <td>0</td>
+    </tr>
+</tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="container2">
+    <h2 class="section-title2">Statistika sezone</h2>
+
+    <div class="stats-grid2">
+        <div class="stat-card2">
+            <h3 class="card-title2">Najbolji strijelci</h3>
+            <div class="list-item2">
+                <span>Mehmed Milak</span>
+                <span class="value2">16 golova</span>
+            </div>
+            <div class="list-item2">
+                <span>Andrej Marijan</span>
+                <span class="value2">12 golova</span>
+            </div>
+            <div class="list-item2">
+                <span>Ante Pavlinović</span>
+                <span class="value2">9 golova</span>
+            </div>
+            <div class="list-item2">
+                <span>Eldar Đugumović</span>
+                <span class="value2">6 golova</span>
+            </div>
+            <div class="list-item2">
+                <span>Matej Gelo</span>
+                <span class="value2">4 golova</span>
+            </div>
+        </div>
+
+        <div class="stat-card2">
+            <h3 class="card-title2">Asistencije</h3>
+            <div class="no-data2">
+                Nema dostupnih podataka.
+            </div>
+        </div>
+
+        <div class="stat-card2">
+            <h3 class="card-title2">Minute na terenu</h3>
+            <div class="list-item2">
+                <span>Ante Pavlinović</span>
+                <span class="value2">1980 min.</span>
+            </div>
+            <div class="list-item2">
+                <span>Andrej Marijan</span>
+                <span class="value2">1890 min.</span>
+            </div>
+            <div class="list-item2">
+                <span>Mehmed Milak</span>
+                <span class="value2">1850 min.</span>
+            </div>
+            <div class="list-item2">
+                <span>Luka Mamić</span>
+                <span class="value2">1720 min.</span>
+            </div>
+            <div class="list-item2">
+                <span>Stipe Vrdoljak</span>
+                <span class="value2">1640 min.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="trener-sekcija">
+    <div class="trener-kontejner">
+        
+        <div class="sekcija-naslov">
+            <span class="plava-crta"></span>
+            <h2>Šef stručnog stožera</h2>
+        </div>
+        
+        <div class="trener-banner">
+            
+            <div class="trener-slika-zona">
+                <img src="{% static 'aplikacija/slike/semi.jpeg' %}" alt="Sanel Orman" class="trener-slika">
+            </div>
+            
+            <div class="trener-info-zona">
+    <h1 class="trener-ime">Ante Semren</h1>
+    <p class="trener-funkcija">Trener kadeta</p>
+    
+    <p class="trener-opis">
+        Ante je stručnjak posvećen taktičkoj disciplini i maksimalnom razvoju mladih talenata. 
+        Njegov fokus na timski rad i agresivan presing stvorio je od kadeta jednu od najčvršćih 
+        i najopasnijih ekipa u ligi, spremnu za najveće klupske izazove.
+    </p>
+    
+    <div class="trener-stats-red">
+        <div class="trener-stat-kutija">
+            <p class="stat-label">Sezone s timom</p>
+            <p class="stat-vrijednost">2</p>
+        </div>
+        <div class="trener-stat-kutija">
+            <p class="stat-label">Omiljena formacija</p>
+            <p class="stat-vrijednost akcent">4-3-3</p>
+        </div>
+        <div class="trener-stat-kutija">
+            <p class="stat-label">Glavni fokus</p>
+            <p class="stat-vrijednost">Taktička disciplina</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

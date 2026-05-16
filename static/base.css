@@ -79,6 +79,7 @@ html {
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center; /* DODANO: Ovo poravnava sve LI stavke u savršenu središnju liniju */
   gap: 30px;
   margin-left: auto; /* Dodatna sigurnost da gura sve udesno */
 }
@@ -90,8 +91,10 @@ html {
   text-transform: uppercase;
   font-size: 0.9rem;
   transition: color 0.3s ease;
+  
+  display: inline-flex; /* DODANO: Omogućuje centriranje unutar samog linka */
+  align-items: center;  /* DODANO: Poravnava tekst i ikonicu/strelicu jedno uz drugo */
 }
-
 .nav-links a:hover {
   color: #cc0000; /* Boja NK Troglava pri prelasku mišem */
 }

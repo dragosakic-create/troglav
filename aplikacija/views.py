@@ -8,3 +8,7 @@ def pocetna(request):
 def juniori_view(request):
     return render(request, 'aplikacija/juniori.html')
 
+def kadeti_view(request):
+    # Ako budeš povlačio kadete iz baze, ovdje ćeš dodati query (npr. Kadeti.objects.all())
+    return render(request, 'aplikacija/kadeti.html')
+
