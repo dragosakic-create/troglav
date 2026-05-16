@@ -576,7 +576,7 @@
     display: inline-block;
     width: 4px;
     height: 24px;
-    background-color: #e63946; /* Crveni detalj */
+    background-color: #1599fe; /* Crveni detalj */
     margin-right: 15px;
     border-radius: 2px;
 }
@@ -626,7 +626,7 @@
 
 /* Stil za brojke (golovi i minute) */
 .value2 {
-    color: #e63946; /* Crvena boja za isticanje rezultata */
+    color: #1599fe; /* Crvena boja za isticanje rezultata */
     font-weight: bold;
 }
 
@@ -640,4 +640,184 @@
     border-radius: 10px;
     font-size: 14px;
     margin-top: 10px;
+}
+
+
+/* Glavni kontejner sekcije */
+.trener-sekcija {
+    width: 100%;
+    /* Ova boja (#0b0e14) je standardna tamna pozadina koju koristiš na ostatku stranice */
+    background-color: #0b0e14; 
+    padding: 60px 0; /* Gornji i donji razmak od statistike */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Kontejner koji drži i naslov i banner u istoj širini */
+.trener-kontejner {
+    width: 100%;
+    max-width: 1200px; /* Prilagodi točnoj širini svoje statistike iznad */
+    padding: 0 20px;
+}
+
+/* Naslov prateći tvoj stil */
+.sekcija-naslov {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.plava-crta {
+    width: 4px;
+    height: 24px;
+    background-color: #0099ff;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 153, 255, 0.5);
+}
+
+.sekcija-naslov h2 {
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Tamna velika klupska kartica */
+.trener-banner {
+    width: 100%;
+    /* Isti tamni gradijent s prve slike */
+    background: linear-gradient(135deg, #111622 0%, #1a2233 100%);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    display: flex;
+    min-height: 380px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Lijeva strana - Centriranje slike i plavi sjaj */
+/* 1. Ovdje pojačavamo radijalni sjaj iza slike (povećana neprozirnost na 0.35) */
+.trener-slika-zona {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 153, 255, 0.35) 0%, transparent 70%);
+    min-width: 380px;
+    padding: 20px;
+}
+
+/* 2. Ovdje dodajemo brutalni neonski plavi rub oko same slike */
+.trener-slika {
+    max-width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 14px;
+    
+    /* Svijetlo plavi tanki rub */
+    border: 2px solid rgba(0, 153, 255, 0.8); 
+    
+    /* Višeslojna sjena: prva je tamna za dubinu, druga i treća su plavi neon glow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
+                0 0 20px rgba(0, 153, 255, 0.4), 
+                0 0 40px rgba(0, 153, 255, 0.2);
+    
+    transition: all 0.3s ease;
+}
+
+/* Bonus: Kad netko prijeđe mišem preko trenera, sjaj se još više upali */
+.trener-slika:hover {
+    border-color: #0099ff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
+                0 0 30px rgba(0, 153, 255, 0.7), 
+                0 0 60px rgba(0, 153, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Desna strana - Tekstovi */
+.trener-info-zona {
+    flex: 1.3;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trener-ime {
+    font-size: 40px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 2px;
+    letter-spacing: -0.5px;
+}
+
+.trener-funkcija {
+    font-size: 14px;
+    color: #0099ff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.trener-opis {
+    font-size: 15px;
+    color: #a0aec0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 550px;
+}
+
+/* Male unutrašnje kartice za statistiku */
+.trener-stats-red {
+    display: flex;
+    gap: 15px;
+}
+
+.trener-stat-kutija {
+    background-color: rgba(11, 14, 20, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.stat-vrijednost {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.stat-vrijednost.akcent {
+    color: #0099ff;
+    text-shadow: 0 0 10px rgba(0, 153, 255, 0.3);
+}
+
+/* Responzivnost za manje ekrane i mobitele */
+@media (max-width: 850px) {
+    .trener-banner {
+        flex-direction: column;
+    }
+    .trener-slika-zona {
+        min-width: 100%;
+        padding-top: 40px;
+    }
+    .trener-info-zona {
+        padding: 30px 20px;
+    }
+    .trener-stats-red {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
