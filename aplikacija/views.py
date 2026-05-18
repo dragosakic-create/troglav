@@ -12,3 +12,6 @@ def kadeti_view(request):
     # Ako budeš povlačio kadete iz baze, ovdje ćeš dodati query (npr. Kadeti.objects.all())
     return render(request, 'aplikacija/kadeti.html')
 
+def povijest_kluba(request):
+    return render(request, 'aplikacija/povijest.html')
+
