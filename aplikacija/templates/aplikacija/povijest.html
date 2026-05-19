@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+ <link rel="stylesheet" href="{% static 'aplikacija/povijest.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+<section class="history-hero-section" style="background-image: url('{% static 'aplikacija/slike/povijest.jpg' %}');">
+    <div class="history-hero-overlay"></div>
+    
+    <div class="history-hero-container">
+        <div class="history-hero-content">
+            <span class="history-hero-tag">Povijest</span>
+            <h1 class="history-hero-title">Povijest po desetljećima</h1>
+            <p class="history-hero-subtitle">Nevjerojatna priča o bogatoj povijesti NK Troglav, ispričana desetljeće po desetljeće.</p>
+        </div>
+    </div>
+</section>
+
+<section class="history-content-section" style="padding: 60px 0; background-color: #0b0f19;">
+    <div style="max-width: 1000px; margin: 0 auto; padding: 0 20px; color: #ffffff;">
+        </div>
+</section>
+
+
+
+<!--povijest ispod -->
+
+<section class="history-decade-section">
+    <div class="history-decade-container">
+        
+        <div class="history-decade-visual">
+            <div class="single-image-wrapper">
+                <img src="{% static 'aplikacija/slike/povijest-logo.jpg' %}" alt="NK Troglav 1918">
+            </div>
+        </div>
+
+        <div class="history-decade-text">
+            <div class="decade-year-badge">
+                <span class="year-start">1918</span>
+                <span class="year-divider">to</span>
+                <span class="year-end">1929</span>
+            </div>
+            
+            <h2 class="decade-main-title">Prvi koraci i osnutak kluba</h2>
+            
+            <div class="decade-accent-line"></div>
+            
+            <p class="decade-lead-paragraph">
+                Livno dobiva svoj prvi nogometni klub zahvaljujući viziji i entuzijazmu lokalne mladeži. U teškim vremenima, ovi pioniri sporta udarili su čvrste temelje i donijeli prvu loptu na ove prostore.
+            </p>
+            
+            <p class="decade-body-text">
+                Iako su prvi koraci bili obilježeni nedostatkom opreme i improviziranim igralištima, ljubav prema plavom dresu brzo se proširila gradom. Klub je odmah postao središte okupljanja i simbol zajedništva, kreirajući tradiciju koja ponosno živi i prenosi se kroz generacije već više od stoljeća.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="history-decade-section secondary-decade">
+    <div class="history-decade-container">
+        
+        <div class="history-decade-text">
+            <div class="decade-year-badge">
+                <span class="year-start">1930</span>
+                <span class="year-divider">to</span>
+                <span class="year-end">1939</span>
+            </div>
+            
+            <h2 class="decade-main-title">Godine rasta i predratni izazovi</h2>
+            
+            <div class="decade-accent-line"></div>
+            
+            <p class="decade-lead-paragraph">
+                Tridesete godine donose stabilizaciju natjecanja i prva službena gostovanja izvan Livna. Nogomet u gradu postaje glavna tema razgovora, a klub privlači sve veći broj mladih igrača.
+            </p>
+            
+            <p class="decade-body-text">
+                Unatoč ekonomskim poteškoćama tog vremena, uprava i igrači uspijevaju održati klub na životu kroz organizaciju prijateljskih utakmica i lokalnih turnira. Stadion Zgona polako postaje prepoznatljivo okupljalište svih generacija Livnjaka, čime se učvršćuje klupski kult koji će preživjeti i najteže povijesne periode.
+            </p>
+        </div>
+
+        <div class="history-decade-visual">
+            <div class="single-image-wrapper">
+                <img src="{% static 'aplikacija/slike/puvijest-sanel.jpg' %}" alt="NK Troglav 1930e">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="history-decade-section">
+    <div class="history-decade-container">
+        
+        <div class="history-decade-visual">
+            <div class="single-image-wrapper">
+                <img src="{% static 'aplikacija/slike/povijest-slika-2.jpg' %}" alt="NK Troglav od 2000 do danas">
+            </div>
+        </div>
+
+        <div class="history-decade-text">
+            <div class="decade-year-badge">
+                <span class="year-start">2000</span>
+                <span class="year-divider">to</span>
+                <span class="year-end">2026</span>
+            </div>
+            
+            <h2 class="decade-main-title">Od Premijer lige do stvaranja nove budućnosti</h2>
+            
+            <div class="decade-accent-line"></div>
+            
+            <p class="decade-lead-paragraph">
+                Ulazak u zajedničku Premijer ligu Bosne i Hercegovine u sezoni 2000./2001. označio je vrhunac modernog natjecateljskog uspjeha kluba na domaćoj sceni.
+            </p>
+            
+            <p class="decade-body-text">
+                Nakon povijesnog nastupa u elitnom razredu i kasnijih natjecanja u Prvoj ligi FBiH, klub prolazi kroz teška financijska vremena koja su 2014. godine zahtijevala potpunu reorganizaciju. Pod novim nazivom NK Troglav 1918, klub okreće novi list. Danas se fokus u potpunosti prebacuje na temeljit rad s mlađim kategorijama, modernizaciju klupske infrastrukture na Zgonima i stabilan razvoj koji jamči povratak livanjskog nogometa na stare staze slave.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!--kljucni trenutci-->
+<section class="history-milestones-section">
+    <div class="history-milestones-container">
+        
+        <div class="milestones-header">
+            <h2 class="milestones-title">Ključni Trenuci & Legende</h2>
+            <div class="milestones-accent-line"></div>
+        </div>
+
+        <div class="milestones-grid">
+            
+            <div class="milestone-card">
+                <div class="milestone-meta">
+                    <span class="milestone-tag">Simbolika</span>
+                </div>
+                <h3 class="milestone-card-title">Planinski Vrh</h3>
+                <p class="milestone-desc">
+                    Klub ponosno nosi ime po **Troglavu (1913 m)**, najvišem vrhu planine Dinare, simbolizirajući snagu, čvrstoću i ponos Livna i cijelog kraja od samog osnutka 1918. godine.
+                </p>
+            </div>
+
+            <div class="milestone-card highlight-milestone">
+                <div class="milestone-meta">
+                    <span class="milestone-tag">Klupske Legende</span>
+                </div>
+                <h3 class="milestone-card-title">Rasadnik Talenata</h3>
+                <p class="milestone-desc">
+                    Iz Livna i s terena na Zgonima potekla su neka od najvećih nogometnih i trenerskih imena, uključujući legendarnog izbornika **Zlatka Dalića** i proslavljenog vratara **Niku Čeku**.
+                </p>
+            </div>
+
+            <div class="milestone-card">
+                <div class="milestone-meta">
+                    <span class="milestone-tag">Dom Kluba</span>
+                </div>
+                <h3 class="milestone-card-title">Kult Stadiona Zgona</h3>
+                <p class="milestone-desc">
+                    Stadion Zgona nije samo obično igralište, već povijesno središte okupljanja svih generacija Livnjaka. Mjesto gdje su se igrale legendarne utakmice i stvarala klupska tradicija.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!--klupski uspjesi-->
+<section class="history-trophies-section">
+    <div class="history-trophies-container">
+        
+        <div class="trophies-header">
+            <h2 class="trophies-title">Klupski Uspjesi</h2>
+            <div class="trophies-accent-line"></div>
+        </div>
+
+        <div class="trophies-grid">
+            
+            <div class="trophy-card">
+                <div class="trophy-icon-wrapper">
+                    <span class="trophy-emoji">🏆</span>
+                </div>
+                <h3 class="trophy-card-title">Prvaci Lige</h3>
+                <span class="trophy-count">5 Puta</span>
+                <p class="trophy-years">1974, 1982, 1995, 2002, 2011</p>
+            </div>
+
+            <div class="trophy-card highlight-trophy">
+                <div class="trophy-icon-wrapper">
+                    <span class="trophy-emoji">🏆</span>
+                </div>
+                <h3 class="trophy-card-title">Kup Županije</h3>
+                <span class="trophy-count">8 Puta</span>
+                <p class="trophy-years">Najuspješniji klub u regiji</p>
+            </div>
+
+            <div class="trophy-card">
+                <div class="trophy-icon-wrapper">
+                    <span class="trophy-emoji">🏅</span>
+                </div>
+                <h3 class="trophy-card-title">Omladinska Škola</h3>
+                <span class="trophy-count">3 Naslova</span>
+                <p class="trophy-years">Uspjesi u kadetskoj i juniorskoj ligi</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+{% endblock %}

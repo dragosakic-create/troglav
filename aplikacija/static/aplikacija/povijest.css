@@ -1,0 +1,547 @@
+/* ==========================================================================
+   POVIJEST KLUBA - HERO SEKCIJA (Manchester United Stil)
+   ========================================================================== */
+
+/* Glavna sekcija */
+.history-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 580px; /* Povećana visina sekcije da kompenzira spuštanje slike */
+    background-size: cover;
+    
+    /* KLJUČNA PROMJENA: center top govori brauzeru da poravna sliku po gornjem rubu kontejnera, 
+       a dodavanjem paddinga slika će započeti točno ispod navbara */
+    background-position: center top; 
+    
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end; /* Tekst ostaje na dnu */
+    
+    /* Povećavamo gornji razmak da gurnemo cijeli sadržaj i vrh slike ispod tvog sivog navbara */
+    padding-top: 180px; 
+    
+    box-sizing: border-box;
+    overflow: hidden;
+}
+/* Tamni filter (overlay) preko slike */
+.history-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Promjena ovdje: na kraju gradijenta je tvoja tamnoplava boja */
+    background: linear-gradient(to bottom, rgba(11, 15, 25, 0.3) 0%, #0b0f19 100%);
+    z-index: 1;
+}
+
+/* Kontejner zaključan na 1000px (isto kao i ostale tablice i widgeti) */
+.history-hero-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 60px 20px; /* 60px razmaka od samog dna hero sekcije */
+    z-index: 2; /* Izbacuje tekst iznad tamnog filtera */
+}
+
+/* Tekstualni blok */
+.history-hero-content {
+    max-width: 750px; /* Sprečava tekst da se razvuče previše desno */
+}
+
+/* Mali tag iznad glavnog naslova */
+.history-hero-tag {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Glavni naslov */
+.history-hero-title {
+    color: #ffffff;
+    font-size: 3.5rem; /* Veliki, čisti font */
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+    font-family: "Inter", sans-serif;
+    letter-spacing: -1px;
+}
+
+/* Podnaslov / Kratki opis */
+.history-hero-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+/* Prilagodba za mobilne uređaje i tablete */
+@media (max-width: 768px) {
+    .history-hero-section {
+        min-height: 420px;
+    }
+    
+    .history-hero-container {
+        padding-bottom: 40px;
+    }
+    
+    .history-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .history-hero-subtitle {
+        font-size: 0.95rem;
+    }
+}
+
+
+/*sliek ispod*/
+
+/* ==========================================================================
+   MODERNA POVIJEST KLUBA - DESETLJEĆA (JEDNA SLIKA LIJEVO, TEKST DESNO)
+   ========================================================================== */
+
+/* Glavna sekcija s tamnom pozadinom iz tvog dizajna */
+.history-decade-section {
+    background-color: #0b0f19; /* Mora biti potpuno ista boja kao na dnu gradijenta iznad */
+    padding: 90px 0;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+/* Kontejner zaključan na tvojih standardnih 1000px, centriran */
+.history-decade-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: table; /* Osigurava da su lijeva i desna strana uvijek jednake visine */
+    table-layout: fixed;
+    box-sizing: border-box;
+}
+
+/* Lijevi stupac - Slika */
+.history-decade-visual {
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle;
+    padding-right: 50px;
+}
+
+/* Desni stupac - Tekstualni sadržaj */
+.history-decade-text {
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+/* --- OKVIR ZA JEDNU SLIKU (Clean & Modern) --- */
+.single-image-wrapper {
+    width: 100%;
+    height: 420px; /* Fiksna visina prilagođena visini teksta desno */
+    background-color: #111520;
+    border: 1px solid #1f2433; /* Diskretan obrub kao na tvojim widgetima */
+    border-radius: 15px; /* Zaobljeni rubovi koji prate cijeli tvoj sajt */
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); /* Elegantna duboka sjena */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Blagi hover efekt na sliku */
+.single-image-wrapper:hover {
+    transform: translateY(-3px);
+    border-color: #2f364d;
+}
+
+.single-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Slika automatski popunjava prostor bez izobličenja */
+    display: block;
+}
+
+/* --- DESNA STRANA - TIPOGRAFIJA --- */
+
+/* Velike godine (Npr. 1918 to 1929) */
+.decade-year-badge {
+    font-family: "Inter", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 18px;
+}
+
+.decade-year-badge .year-divider {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 12px;
+    font-style: italic;
+}
+
+/* Glavni naslov desetljeća */
+.decade-main-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 15px 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* Klupska plavo-zlatna linija ispod naslova */
+.decade-accent-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #0052cc, #f59e0b);
+    margin-bottom: 25px;
+    border-radius: 2px;
+}
+
+/* Glavni uvodni tekst (veći font) */
+.decade-lead-paragraph {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    margin: 0 0 18px 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* Detaljni tekst */
+.decade-body-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 400;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* --- RESPONSIVE (Prilagodba za mobitele) --- */
+@media (max-width: 850px) {
+    .history-decade-container {
+        display: block; /* Rušimo tablicu u jedan stupac */
+    }
+    
+    .history-decade-visual, 
+    .history-decade-text {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .history-decade-visual {
+        margin-bottom: 35px;
+    }
+    
+    .single-image-wrapper {
+        height: 280px; /* Smanjena visina slike na mobitelu */
+    }
+    
+    .decade-year-badge {
+        font-size: 2.8rem;
+    }
+}
+
+
+/* ==========================================================================
+   KOREKCIJA ZA KONTRA RASPIS (TEKST LIJEVO, SLIKA DESNO)
+   ========================================================================== */
+
+/* Zamjena unutarnjih razmaka za stupce u novoj sekciji */
+.secondary-decade .history-decade-text {
+    padding-left: 0;
+    padding-right: 50px; /* Razmak između teksta i slike s desne strane */
+}
+
+.secondary-decade .history-decade-visual {
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+/* --- RESPONSIVE ZA MOBITELE --- */
+@media (max-width: 850px) {
+    /* Na mobitelu prisiljavamo kontejner da koristi flex kako bismo sliku gurnuli na vrh */
+    .secondary-decade .history-decade-container {
+        display: flex;
+        flex-direction: column-reverse; /* Okreće redoslijed: slika ide prva, tekst ispod nje */
+    }
+    
+    .secondary-decade .history-decade-text {
+        padding-right: 0; /* Brišemo desni razmak na mobitelu */
+    }
+    
+    .secondary-decade .history-decade-visual {
+        padding-left: 0;
+        margin-bottom: 35px; /* Razmak između slike i teksta ispod nje */
+    }
+}
+
+
+/* ==========================================================================
+   POVIJEST KLUBA - ZANIMLJIVOSTI I LEGENDE (DODATNI DIZAJN)
+   ========================================================================== */
+
+/* Glavna pozadina sekcije */
+.history-milestones-section {
+    background-color: #0b0f19; /* Tvoja točna tamna boja */
+    padding: 60px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Kontejner zaključan na tvojih standardnih 1000px */
+.history-milestones-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Naslov i stilizirana linija */
+.milestones-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.milestones-title {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    margin: 0 0 12px 0;
+}
+
+.milestones-accent-line {
+    width: 50px;
+    height: 3px;
+    background-color:  #0669ea; /* Tvoja crvena boja */
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Grid raspored za tri kartice */
+.milestones-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+/* Stil pojedinačne kartice zanimljivosti */
+.milestone-card {
+    flex: 1;
+    background: linear-gradient(135deg, #111520 0%, #0d111a 100%);
+    border: 1px solid #1f2433;
+    border-radius: 15px;
+    padding: 30px 25px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.milestone-card:hover {
+    transform: translateY(-4px);
+    border-color: #2f364d;
+}
+
+/* Istaknuta srednja kartica (Legende) dobiva suptilan crveni sjaj */
+.highlight-milestone {
+    border-color: rgba(6, 78, 234, 0.2);
+}
+
+/* Kontejner za gornju oznaku (Tag) */
+.milestone-meta {
+    margin-bottom: 15px;
+}
+
+/* Mali crveni bedž na vrhu kartice */
+.milestone-tag {
+    display: inline-block;
+    background-color: rgba(6, 105, 234, 0.1); /* Prozračna crvena */
+    color:  #0669ea; /* Tvoja čista crvena */
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Naslov unutar kartice */
+.milestone-card-title {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* Opisni tekst */
+.milestone-desc {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* Podešavanje debljine teksta za važne pojmove */
+.milestone-desc strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* --- RESPONSIVE ZA MOBITELE --- */
+@media (max-width: 768px) {
+    .milestones-grid {
+        flex-direction: column; /* Na mobitelu se kartice slažu jedna ispod druge */
+        gap: 20px;
+    }
+    
+    .milestone-card {
+        padding: 25px 20px;
+    }
+}
+
+
+/* ==========================================================================
+   POVIJEST KLUBA - SEKCIJA S TROFEJIMA (DNO STRANICE)
+   ========================================================================== */
+
+/* Glavna pozadina - Prati tvoju bazičnu tamnu boju */
+.history-trophies-section {
+    background-color: #0b0f19;
+    padding: 80px 0 100px 0; /* Veći donji razmak da se odvoji od footera */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Kontejner zaključan na tvojih 1000px */
+.history-trophies-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Zaglavlje sekcije */
+.trophies-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.trophies-title {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    margin: 0 0 12px 0;
+}
+
+/* Centrirana crvena linija ispod naslova */
+.trophies-accent-line {
+    width: 50px;
+    height: 3px;
+    background-color: #0669ea; /* Tvoja crvena boja */
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* Grid za kartice */
+.trophies-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Pojedinačna kartica (Isti stil kao tvoji widgeti/kartice) */
+.trophy-card {
+    flex: 1;
+    background: linear-gradient(135deg, #111520 0%, #0d111a 100%);
+    border: 1px solid #1f2433;
+    border-radius: 15px;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.trophy-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(9, 133, 248, 0.3); /* Blagi crveni sjaj na hover */
+}
+
+/* Srednja kartica dobiva malo jači crveni naglasak */
+.highlight-trophy {
+    border-color: rgba(6, 124, 234, 0.25);
+}
+
+/* Krug oko emojija/ikone */
+.trophy-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+
+.trophy-emoji {
+    font-size: 1.8rem;
+}
+
+/* Naslov trofeja */
+.trophy-card-title {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* Broj osvojenih trofeja (Istaknuto crveno) */
+.trophy-count {
+    color: #1188f7; /* Tvoja crvena */
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 12px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Godine / Opis na dnu kartice */
+.trophy-years {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+/* --- RESPONSIVE ZA MOBITELE --- */
+@media (max-width: 768px) {
+    .trophies-grid {
+        flex-direction: column; /* Kartice idu jedna ispod druge na mobitelu */
+        gap: 20px;
+    }
+    
+    .trophy-card {
+        padding: 25px 20px;
+    }
+}

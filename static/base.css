@@ -96,7 +96,7 @@ html {
   align-items: center;  /* DODANO: Poravnava tekst i ikonicu/strelicu jedno uz drugo */
 }
 .nav-links a:hover {
-  color: #cc0000; /* Boja NK Troglava pri prelasku mišem */
+  color: #0d8fe6; /* Boja NK Troglava pri prelasku mišem */
 }
 
 
