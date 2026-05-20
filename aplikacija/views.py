@@ -15,3 +15,6 @@ def kadeti_view(request):
 def povijest_kluba(request):
     return render(request, 'aplikacija/povijest.html')
 
+def seniori_view(request):
+    return render(request, 'aplikacija/seniori.html')
+
