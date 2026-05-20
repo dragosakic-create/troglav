@@ -1,0 +1,436 @@
+/* ==========================================================================
+   1. POZADINA (FIXED VIDEO & OVERLAY)
+   ========================================================================== */
+
+/* Kontejner videa: Fiksiran na dnu ekrana, ne pomjera se i ne ovisi o sadržaju */
+.video-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Smješta se strogo iza svih ostalih elemenata */
+    overflow: hidden;
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tamni overlay koji daje brutalni kontrast i čitljivost teksta */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(10, 14, 20, 0.8) 0%, rgba(18, 24, 36, 0.95) 100%);
+}
+
+/* ==========================================================================
+   2. GLAVNI OMOTAČ (RJEŠENJE ZA NAVBAR PREMA JUNIORSKOM CSS-U)
+   ========================================================================== */
+.izvjestaj-wrapper {
+    position: relative;
+    /* Koristimo tvoju provjerenu tehniku: 200px s vrha gura sadržaj skroz ispod nav-bara */
+    padding: 200px 20px 40px 20px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Unutrašnji kontejner koji drži gridove centriranim */
+.izvjestaj-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. GLASSMORPHISM KARTICE & GRIDSTILOVI
+   ========================================================================== */
+.izvjestaj-glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Gornji grid (Rezultat | Izvještaj) */
+.izvjestaj-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 992px) {
+    .izvjestaj-main-grid { grid-template-columns: 1fr; }
+}
+
+/* Donji grid (Statistika | Incidenti | Trener) */
+.izvjestaj-secondary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 24px;
+}
+
+@media (max-width: 992px) {
+    .izvjestaj-secondary-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   4. DETALJI: REZULTAT, TIMOVI I STRIJELCI
+   ========================================================================== */
+.match-header-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.match-meta {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #8a99ad;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.match-teams-score {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.report-team img {
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0 0 12px rgba(0, 86, 179, 0.4));
+}
+
+.report-team h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.report-score-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.score-num {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.match-date {
+    font-size: 0.85rem;
+    color: #a0aec0;
+}
+
+/* Strijelci vremenska linija */
+.scorers-section h4 {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #8a99ad;
+    margin-bottom: 15px;
+}
+
+.timeline-scorers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.scorer-row {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.scorer-row.home { justify-content: flex-end; padding-right: 15px; }
+.scorer-row.away { justify-content: flex-start; padding-left: 15px; }
+
+.minute-badge {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0 8px;
+}
+.home-bg { background-color: rgba(0, 86, 179, 0.3); color: #3182ce; border: 1px solid #3182ce; }
+.away-bg { background-color: rgba(214, 158, 46, 0.2); color: #ecc94b; border: 1px solid #ecc94b; }
+
+.timeline-center-line {
+    width: 2px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    position: relative;
+}
+.timeline-dot {
+    width: 8px;
+    height: 8px;
+    background: #3182ce;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #3182ce;
+}
+
+/* ==========================================================================
+   5. TEKSTALNI IZVJEŠTAJ I POPRAVAK SLIKE (DA SE KARTICE NE KVARE)
+   ========================================================================== */
+.article-card {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.article-section h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    color: #ffffff;
+    border-left: 4px solid #3182ce;
+    padding-left: 12px;
+}
+
+.article-section p {
+    color: #cbd5e0;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* POPRAVLJEN OKVIR ZA SLIKU: Ne dopušta slici da rasteže grid */
+.article-image-box {
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;       /* Seče sve što izlazi van okvira */
+    border: 1px solid rgba(255,255,255,0.05);
+    display: block;
+    width: 100%;            /* Prilagođava se širini kartice */
+}
+
+/* POPRAVLJENA KLASA ZA REALNU SLIKU: Zaključana visina i odrezana bez rastezanja */
+.article-img {
+    width: 100%;
+    height: 320px;          /* Fiksna visina prilagođena za tvoju sliku 'samke.jpg' */
+    object-fit: cover;      /* Ključno: Kropuje sliku umjesto da je gnječi/širi */
+    object-position: center;/* Drži fokus na sredini kadra */
+    display: block;
+}
+
+/* ==========================================================================
+   6. DONJE SEKCIJE: STATISTIKA, KARTONI I TRENER (KOMPLETAN FIX)
+   ========================================================================== */
+
+/* Naslovi u donjim karticama */
+.stats-card h3, .cards-list-card h3, .coach-quote-card h3 {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    color: #8a99ad;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Prisiljavamo donji grid da drži sve 3 kartice u istoj ravnini */
+.izvjestaj-secondary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 24px;
+    align-items: stretch; /* Sve kartice će biti u milimetar iste visine */
+    margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+    .izvjestaj-secondary-grid { 
+        grid-template-columns: 1fr; /* Na mobitelu idu jedna ispod druge */
+    }
+}
+
+/* Fleksibilnost unutar samih kartica */
+.stats-card, .cards-list-card, .coach-quote-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* --- STATISTIKA (Fix protiv gnječenja teksta) --- */
+.stat-progress-bar {
+    margin-bottom: 20px;
+}
+
+.stat-labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #e2e8f0;
+}
+
+/* Srednji tekst (npr. SHOTS ON TARGET) dobiva svoj prostor i ne dira brojeve */
+.stat-labels span:nth-child(2) {
+    color: #718096;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-align: center;
+    flex: 1;
+    padding: 0 10px;
+    text-transform: uppercase;
+}
+
+.stat-labels span:nth-child(1) { text-align: left; min-width: 30px; }
+.stat-labels span:nth-child(3) { text-align: right; min-width: 30px; }
+
+.bar-bg {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #3182ce, #319795);
+    border-radius: 3px;
+}
+
+/* --- KARTONI I INCIDENTI --- */
+.card-incident-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-incident-row:last-child { 
+    border-bottom: none; 
+}
+
+.yellow-box {
+    width: 12px;
+    height: 18px;
+    background-color: #ecc94b;
+    border-radius: 3px;
+    margin-right: 15px;
+    box-shadow: 0 0 10px rgba(236, 201, 75, 0.5);
+}
+
+.player-incident {
+    flex: 1;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+}
+
+.incident-min {
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+/* --- CITAT TRENERA --- */
+.quote-layout {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.coach-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3182ce;
+    box-shadow: 0 0 15px rgba(49, 130, 206, 0.3);
+}
+
+.quote-content {
+    position: relative;
+    flex: 1;
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: rgba(49, 130, 206, 0.15);
+    position: absolute;
+    top: -25px;
+    left: -10px;
+    font-family: serif;
+}
+
+.quote-content p {
+    font-style: italic;
+    color: #cbd5e0;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    font-size: 0.95rem;
+}
+
+.quote-author {
+    display: flex;
+    flex-direction: column;
+}
+
+.quote-author strong {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.quote-author span {
+    color: #718096;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* --- GUMB POVRATAK (Potpuno centriran ispod svega) --- */
+.back-btn-container {
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    display: block;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 14px 35px;
+    background: rgba(49, 130, 206, 0.1);
+    color: #3182ce;
+    border: 1px solid rgba(49, 130, 206, 0.3);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-back:hover {
+    background: #3182ce;
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(49, 130, 206, 0.4);
+    transform: translateY(-2px);
+}

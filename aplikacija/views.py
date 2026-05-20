@@ -18,3 +18,6 @@ def povijest_kluba(request):
 def seniori_view(request):
     return render(request, 'aplikacija/seniori.html')
 
+def izvjestaj_view(request):
+    return render(request, 'aplikacija/izvjestaj.html')
+

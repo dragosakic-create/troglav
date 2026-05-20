@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'aplikacija/izvjestaj.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+
+<div class="video-background-container">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="{% static 'aplikacija/video/troglavdron.mp4' %}" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+</div>
+
+<div class="izvjestaj-wrapper">
+    <div class="izvjestaj-container">
+        
+        <div class="izvjestaj-main-grid">
+            
+            <div class="izvjestaj-glass-card match-header-card">
+                <div class="match-meta">DRUGA LIGA JUG • 22. KOLO • SENIORI</div>
+                
+                <div class="match-teams-score">
+                    <div class="report-team">
+                        <img src="{% static 'aplikacija/slike/troglav-logo.png' %}" alt="NK Troglav">
+                        <h3>NK TROGLAV</h3>
+                    </div>
+                    
+                    <div class="report-score-box">
+                        <span class="score-num">1:1</span>
+                        <span class="match-date">10.05.2026. Nedjelja</span>
+                    </div>
+                    
+                    <div class="report-team">
+                        <img src="{% static 'aplikacija/slike/capljina-logo.png' %}" alt="HNK Čapljina">
+                        <h3>HNK ČAPLJINA</h3>
+                    </div>
+                </div>
+                
+                <div class="scorers-section">
+                    <h4>STRIJELCI</h4>
+                    <div class="timeline-scorers">
+                        <div class="scorer-row home">
+                            <span class="scorer-name">Mirko Jozić (P)</span>
+                            <span class="minute-badge home-bg">67'</span>
+                        </div>
+                        <div class="timeline-center-line">
+                            <div class="timeline-dot"></div>
+                        </div>
+                        <div class="scorer-row away">
+                            <span class="minute-badge away-bg">72'</span>
+                            <span class="scorer-name">Ante Pažin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="izvjestaj-glass-card article-card">
+                <div class="article-section">
+                    <h2>ČAPLJINA STIGLA DO BODA NAKON DRAMATIČNE ZAVRŠNICE</h2>
+                    <p>Čapljina je stigla do boda u samoj završnici nakon dramatične utakmice u Livnu. Troglav je imao terensku inicijativu i preko raspoloženog Jozića s bijele tačke uspio doći do zasluženog vodstva, krunisavši bolju igru u tom dijelu meča.</p>
+                </div>
+                    
+                <div class="article-image-box">
+                    <img src="{% static 'aplikacija/slike/samke.jpg' %}" alt="NK Troglav duel na sredini terena" class="article-img">
+                </div>
+                
+                <div class="article-section">
+                    <h2>PAŽIN ŠOKIRAO STADION U 72. MINUTI</h2>
+                    <p>Ipak, radost domaćih navijača kratko je trajala. Pad koncentracije u odbrani Troglava iskoristio je brzonogi Ante Pažin, koji se sjajno snašao u kaznenom prostoru i matirao nemoćnog golmana domaćih za konačnih 1:1 i podjelu bodova.</p>
+                </div>
+            </div> </div> <div class="izvjestaj-secondary-grid">
+            
+            <div class="izvjestaj-glass-card stats-card">
+                <h3>STATISTIKA</h3>
+                <div class="stat-progress-bar">
+                    <div class="stat-labels"><span>50%</span> <span>POSSESSION</span> <span>50%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 50%;"></div></div>
+                </div>
+                <div class="stat-progress-bar">
+                    <div class="stat-labels"><span>10</span> <span>SHOTS ON TARGET</span> <span>3</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 76%;"></div></div>
+                </div>
+                <div class="stat-progress-bar">
+                    <div class="stat-labels"><span>3</span> <span>FOULS</span> <span>8</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 27%;"></div></div>
+                </div>
+                <div class="stat-progress-bar">
+                    <div class="stat-labels"><span>2</span> <span>CORNER KICKS</span> <span>1</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 66%;"></div></div>
+                </div>
+            </div>
+            
+            <div class="izvjestaj-glass-card cards-list-card">
+                <h3>INCIDENTI I OPOMENE</h3>
+                <div class="card-incident-row">
+                    <span class="card-color yellow-box"></span>
+                    <span class="player-incident">Petar Šesto</span>
+                    <span class="incident-min">28'</span>
+                </div>
+                <div class="card-incident-row">
+                    <span class="card-color yellow-box"></span>
+                    <span class="player-incident">Josip Vidović</span>
+                    <span class="incident-min">30'</span>
+                </div>
+                <div class="card-incident-row">
+                    <span class="card-color yellow-box"></span>
+                    <span class="player-incident">Danko Krivić</span>
+                    <span class="incident-min">40'</span>
+                </div>
+                <div class="card-incident-row">
+                    <span class="card-color yellow-box"></span>
+                    <span class="player-incident">Tomislav Koprčina</span>
+                    <span class="incident-min">44'</span>
+                </div>
+            </div>
+            
+            <div class="izvjestaj-glass-card coach-quote-card">
+                <h3>IZJAVA TRENERA</h3>
+                <div class="quote-layout">
+                    <div class="coach-avatar">
+                        <img src="{% static 'aplikacija/slike/danko.jpeg' %}" alt="Danijel Krivić">
+                    </div>
+                    <div class="quote-content">
+                        <span class="quote-icon">“</span>
+                        <p>"Teško je analizirati igru kad Anđelo Semren kroji pravila. Momci ostave srce na terenu, a on izmisli stvari koje ni na televiziji ne postoje. Mislio sam da je suđenje Drage Tabaka vrhunac svega u ovoj ligi, ali Semren ga je danas službeno skinuo s trona. Otkinuta nam je čista pobjeda."</p>
+                        <div class="quote-author">
+                            <strong>Danijel Krivić</strong>
+                            <span>ŠEF STRUČNOG STABA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div> <div class="back-btn-container">
+            <a href="{% url 'pocetna' %}" class="btn-back">POVRATAK NA PREGLED UTAKMICE</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
