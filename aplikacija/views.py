@@ -21,3 +21,12 @@ def seniori_view(request):
 def izvjestaj_view(request):
     return render(request, 'aplikacija/izvjestaj.html')
 
+def vijest1_view(request):
+    return render(request, 'aplikacija/vijest1.html')
+
+def vijest2_view(request):
+    return render(request, 'aplikacija/vijest2.html')
+
+def vijest3_view(request):
+    return render(request, 'aplikacija/vijest3.html')
+

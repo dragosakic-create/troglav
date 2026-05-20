@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'aplikacija/vijest2.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+<div class="vijest-detalji-wrapper">
+    
+    <div class="vijest-hero-section" style="background-image: url('{% static 'aplikacija/slike/irvasdoktorkamesnice.png' %}');">
+        <div class="vijest-hero-overlay">
+            <div class="vijest-hero-content">
+                <span class="vijest-badge">VIJESTI</span>
+                <span class="vijest-date">
+                    <i class="far fa-calendar-alt"></i> 7. SVIBANJ 2026.
+                </span>
+                <h1>Ivan Vukadin (Stevin) u Troglavu: Od "izdajnika" do spasitelja?</h1>
+                <p class="vijest-subtitle">Najnovije iz kategorije</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="vijest-body-container">
+       <div class="vijest-text-content">
+
+    <p>
+        Nakon što je odradio "staž" kod naših rivala sestre Kamešnice, Ivan Vukadin (Stevin) se odlučio na potez koji je iznenadio Livno – preuzeo je klupu NK Troglav.
+    </p>
+
+    <p>
+        Naravno, etiketa “izdajnika” već mu je zalijepljena (čisto iz ljubavi), ali kod nas to ne traje dugo – jedna dobra utakmica i sve se zaboravlja, dvije i već si legenda.
+    </p>
+
+    <p>
+        Uprava vjeruje da Stevin donosi iskustvo i energiju, ali i znanje iz “druge strane” koje bi moglo pomoći Troglavu da se digne na viši nivo.
+    </p>
+
+    <p>
+        Prvi treninzi i reakcije svlačionice već su pod povećalom. Bit će zanimljivo vidjeti hoće li odmah uvesti red ili će prvo “upoznati ekipu”.
+    </p>
+
+    <p>
+        Navijači, kao i uvijek, čekaju prvi rezultat da donesu konačan sud. Jer u Livnu vrijedi jednostavno pravilo – sve se mjeri na terenu.
+    </p>
+
+    <p>
+        Jedno je sigurno – Troglav ima novu priču, a Stevin priliku da od “onog s druge strane” postane čovjek kojeg će tribine prihvatiti kao svog.
+    </p>
+
+</div>
+        
+        <div class="vijest-back-box">
+            <a href="javascript:history.back()" class="btn-vijest-back">
+                <i class="fas fa-arrow-left"></i> Povratak na vijesti
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

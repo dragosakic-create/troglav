@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'aplikacija/vijest1.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+<div class="vijest-detalji-wrapper">
+    
+    <div class="vijest-hero-section" style="background-image: url('{% static 'aplikacija/slike/danijeldoktoropatije.png' %}');">
+        <div class="vijest-hero-overlay">
+            <div class="vijest-hero-content">
+                <span class="vijest-badge">VIJESTI</span>
+                <span class="vijest-date">
+                    <i class="far fa-calendar-alt"></i> 7. SVIBANJ 2026.
+                </span>
+                <h1>Danijel Krivić (Danko) odlazi: Livno u suzama, uprava u potrazi za čudotvorcem</h1>
+                <p class="vijest-subtitle">Najnovije iz kategorije</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="vijest-body-container">
+        <div class="vijest-text-content">
+            <p>Nakon dugih pregovora i analize protekle polusezone, Danijel Krivić (Danko) službeno više nije šef stručnog štaba NK Troglav. Odluka je pala u klupskim prostorijama, a vijest je munjevito odjeknula Livnom, ostavljajući navijače i simpatizere kluba u potpunom šoku.</p>
+            
+            <p>Uprava kluba je izrazila duboku zahvalnost Kriviću na svemu što je učinio za klub, ističući njegovu posvećenost, taktičku disciplinu i uvođenje modernih geometrijskih principa u igru našeg tima. Pod njegovim vodstvom, Troglav je pokazao stabilnost, ali su izazovi u Drugoj ligi Jug ipak zahtijevali promjene na klupi.</p>
+            
+            <p>Pozivaju se svi vjerni navijači i članovi kluba da ostanu uz momčad u ovom tranzicijskom razdoblju. Uprava je već pokrenula razgovore s potencijalnim kandidatima za novog trenera, tražeći stručnjaka koji može nastaviti tamo gdje je Krivić stao i unijeti novu energiju u borbu za gornji dio tablice.</p>
+            
+            <p>Posebno se naglašava da će fokus kluba u narednim danima biti na stabilizaciji prve momčadi i pripremi za predstojeće prvenstvene okršaje, kako bi spremno dočekali novog šefa i nastavili razvijati lokalne talente na Zgonima.</p>
+        </div>
+        
+        <div class="vijest-back-box">
+            <a href="javascript:history.back()" class="btn-vijest-back">
+                <i class="fas fa-arrow-left"></i> Povratak na vijesti
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
