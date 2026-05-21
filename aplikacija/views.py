@@ -30,3 +30,6 @@ def vijest2_view(request):
 def vijest3_view(request):
     return render(request, 'aplikacija/vijest3.html')
 
+def sponzori_view(request):
+    return render(request, 'aplikacija/sponzori.html')
+

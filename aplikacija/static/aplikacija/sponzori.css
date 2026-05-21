@@ -1,0 +1,151 @@
+/*sponzori*/
+/* Sekcija za sponzore */
+/* Sekcija za sponzore */
+.sponsors-section {
+  background-color: #0d1117; /* Ista pozadina kao i ostatak stranice */
+  padding-top: 170px;       /* <-- DODAJ OVO: gura cijeli sadržaj ispod navbara */
+  padding-bottom: 80px;
+}
+
+/* Glavni okvir za sponzore (tamna kartica) */
+/* Glavni okvir za sponzore (tamna kartica) */
+.sponsors-wrapper {
+  background: #0b0e14; 
+  border-radius: 25px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+
+  /* DODAJ OVE TRI LINIJE ISPOD: */
+  max-width: 1100px;  /* Ograničava širinu cijelog velikog okvira (prilagodi broj po želji) */
+  margin-left: auto;  /* Automatski gura okvir s lijeve strane prema sredini */
+  margin-right: auto; /* Automatski gura okvir s desne strane prema sredini */
+}
+
+.sponsors-title {
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tri jednaka stupca koji prate širinu */
+  gap: 20px;                             /* Razmak između kartica */
+  max-width: 960px;                      /* Optimalna širina za 3 kartice */
+  margin: 0 auto;                        /* Centrira cijelu rešetku unutar wrappera */
+}
+
+/* Pojedinačna kartica sponzora */
+.sponsor-card {
+  background: #161b22; 
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* Efekt kad se mišem prijeđe preko kartice */
+.sponsor-card:hover {
+  transform: translateY(-5px);
+  background: #1c2128;
+}
+
+.sponsor-logo-box {
+  width: 100px;
+  height: 100px;
+  background: #ffffff; /* Bijela pozadina za logo ako je potreban (kao na slici) */
+  border-radius: 5px; /* Blago zaobljeno kao na slici */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.sponsor-logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.sponsor-name {
+  color: #8b949e;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Kontejner koji centrira gumb ispod sponzora */
+.sponsors-more {
+    text-align: center !important;
+    padding: 40px 0 20px 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important; /* Prisiljava flex elemente na centar */
+    clear: both !important;             /* Čisti eventualne prijašnje elemente */
+    grid-column: 1 / -1;                /* Ako je gumb slučajno ostao unutar grida, ovo mu naređuje da zauzme cijeli red i centrira se */
+}
+
+/* Stil za gumb Pogledaj više */
+.btn-more {
+    display: inline-block;
+    padding: 12px 34px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    
+    /* Stakleni efekt (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Suptilni plavi rub koji paše uz ostatak dizajna */
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 50px;
+    
+    /* Glatki prijelaz za hover animaciju */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efekt kad se mišem prijeđe preko gumba */
+.btn-more:hover {
+    color: #ffffff;
+    background: rgba(0, 212, 255, 0.15); /* Blago plavkasto staklo */
+    border-color: rgba(0, 212, 255, 0.8); /* Svijetlo plavi neonski rub */
+    
+    /* Plavi sjaj koji prati stil tvojih kartica i trenera */
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 
+                0 6px 20px rgba(0, 0, 0, 0.4);
+                
+    transform: translateY(-3px); /* Gumb se lagano podigne */
+    cursor: pointer;
+}
+
+/* Efekt kad se gumb klikne */
+.btn-more:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+}
+
+
+/* Kad se gleda na mobitelu, sponzori idu jedan ispod drugog da ne bude stisnuto */
+@media (max-width: 768px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

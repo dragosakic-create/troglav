@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Nk Troglav 1918{% endblock title %}
+
+{% block css_files %}
+ <link rel="stylesheet" href="{% static 'aplikacija/sponzori.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+<section class="sponsors-section">
+    <div class="container">
+        <div class="sponsors-wrapper">
+          <h2 class="sponsors-title">TEHNIČKI SPONZORI</h2>
+            
+            <div class="sponsors-grid">
+                
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box">
+                        <img src="{% static 'aplikacija/slike/gmsemren.png' %}" alt="Klubportal">
+                    </div>
+                    <span class="sponsor-name">G&M SEMREN</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/premier.jpg' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">PREMIER KLADIONICA</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/wwin.jpg' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">WWIN</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/pavic.png' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">PTC PAVIĆ</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/bkrug.jpg' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">B KRUG</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/niskogradnja-omazic.png' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">NISKOGRADNJA OMAZIC</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/hteronet.jpeg' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">HT ERONET</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/ivanovic.png' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">PTC IVANOVIĆ</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/roco-commerce.jpg' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">ROCO-COMMERCE</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/elektroprivreda.jpg' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">JP ELEKTROPRIVREDA</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/libus.png' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">LI-Bus</span>
+                </div>
+
+                <div class="sponsor-card">
+                    <div class="sponsor-logo-box" style="background: transparent;">
+                        <img src="{% static 'aplikacija/slike/intertrgovina.png' %}" alt="Klubbase">
+                    </div>
+                    <span class="sponsor-name">INTERTRGOVINA</span>
+                </div>
+
+                     <!-- Gumb / tekst Pogledaj više -->
+            <div class="sponsors-more">
+                <a href="{% url 'pocetna' %}" class="btn-more">Povratak nazad</a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+            
+{% endblock content %}
