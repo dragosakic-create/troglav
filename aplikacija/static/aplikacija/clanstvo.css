@@ -1,0 +1,246 @@
+/* ==========================================
+   GLAVNA SEKCIJA ZA ČLANSTVO (Centriranje)
+   ========================================== */
+body {
+    background-color: #0d1424; /* Istovjetna tamno plava boja kao i forma */
+    padding: 100px 0px 0px 0px; 
+    
+    margin-top: 0; /* Obavezno resetuj marginu na 0 */
+}
+
+.membership-section {
+    padding: 60px 20px 40px 20px; /* Popravljeno: vraćeno na normalan padding */
+    margin-top: 80px;             /* Popravljeno: gura formu ispod navbara bez kvarenja pozadine */
+    background-color: #0d1424; 
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Ograničavanje širine forme da ne ide od ruba do ruba */
+.form-container {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+/* Tekstualni stilovi */
+.form-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.form-container .subtitle {
+    color: #94a3b8;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+/* Form grupe i Labele */
+.form-group {
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+.required {
+    color: #3b82f6; /* Plava zvjezdica */
+}
+
+/* ==========================================
+   STILIZACIJA DJANGO INPUT POLJA (.form-input)
+   ========================================== */
+.form-container .form-input {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #1e293b; /* Tamni inputi */
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Fokus efekt na klik */
+.form-container .form-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Placeholder boja */
+.form-container .form-input::placeholder {
+    color: #64748b;
+}
+
+/* Kalendar ikonica za datum */
+input[type="date"].form-input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Prilagodba za select strelicu */
+select.form-input {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    appearance: none;
+}
+
+/* ==========================================
+   GUMBI I RAZDJELNICI + ANIMACIJE GUMBA
+   ========================================== */
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: #1d4ed8; /* Plavi gumb sa slike */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    /* Nadograđeno: glatki prijelaz za pro animaciju */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efekt prosvjetljavanja, sjene i blagog dizanja na hover */
+.btn-submit:hover {
+    background-color: #2563eb;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Klik efekt - gumb se fizički malo "stisne" */
+.btn-submit:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 2px 5px rgba(37, 99, 235, 0.2);
+}
+
+.footnote {
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 12px;
+}
+
+.form-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #334155, transparent);
+    margin: 45px 0;
+}
+
+/* Sekcija: Imate pitanja */
+.questions-section {
+    text-align: center;
+}
+
+.questions-section h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.questions-section p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.btn-contact {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-contact:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.error-text {
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* ==========================================
+   DODANO: ANIMACIJE ZA STRANICU USPJEHA
+   ========================================== */
+
+/* Glatko ulaženje i dizanje cijelog kontejnera na ekranu */
+/* ==========================================
+   DODANO: ANIMACIJE ZA STRANICU USPJEHA
+   ========================================== */
+
+/* Glatko ulaženje i dizanje cijelog kontejnera na ekranu */
+.animate-pop-in {
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+}
+
+/* Moćna animacija iskakanja i rotacije plave kvačice */
+.success-checkmark {
+    font-size: 70px;
+    color: #3b82f6;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: scaleUpCheck 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s forwards;
+    transform: scale(0) rotate(-20deg);
+    opacity: 0;
+}
+
+/* Ključni kadrovi za ulazak prozora */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ključni kadrovi za 'pop' efekt kvačice */
+@keyframes scaleUpCheck {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-20deg);
+    }
+    70% {
+        transform: scale(1.2) rotate(10deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}

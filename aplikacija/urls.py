@@ -12,6 +12,8 @@ urlpatterns = [
     path('vijest2', views.vijest2_view, name='vijest2'),
     path('vijest3', views.vijest3_view, name='vijest3'),
     path('sponzori', views.sponzori_view, name='sponzori'),
+    path('clanstvo', views.prijava_clanstvo, name='clanstvo'),
+    path('uspjeh', views.uspjeh_stranica, name='uspjeh'),
 ]
 
 
