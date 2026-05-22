@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View 
-from .forms import ClanstvoForm
+from .forms import ClanstvoForm, KontaktForm
 
 # Početna stranica
 def pocetna(request):
@@ -62,3 +62,22 @@ def prijava_clanstvo(request):
 # Pogled za stranicu uspjeha (nakon slanja)
 def uspjeh_stranica(request):
     return render(request, 'aplikacija/uspjeh.html')
+
+
+
+# Tvoja kontakt funkcija - PROMIJENJEN SAMO REDIRECT NA KRAJU
+def kontakt_view(request):
+    if request.method == 'POST':
+        form = KontaktForm(request.POST)
+        if form.is_valid():
+            print(f"NOVI KONTAKT UPIT: {form.cleaned_data['name']} - {form.cleaned_data['subject']}")
+            # Kratko preusmjeravanje na novu url rutu
+            return redirect('kontakt_uspjeh')
+    else:
+        form = KontaktForm()
+        
+    return render(request, 'aplikacija/kontakt.html', {'form': form})
+
+# DODAJ OVU NOVU FUNKCIJU ISPOD:
+def kontakt_uspjeh_view(request):
+    return render(request, 'aplikacija/kontakt_uspjeh.html')

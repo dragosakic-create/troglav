@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+ <link rel="stylesheet" href="{% static 'aplikacija/kontakt.css' %}">
+ <link rel="stylesheet" href="{% static 'aplikacija/clanstvo.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+<div class="kontakt-page-container" style="display: flex; justify-content: center; align-items: center;">
+    <div class="kontakt-forma-container animate-pop-in" style="text-align: center; max-width: 550px; margin: 40px auto; padding: 60px 40px;">
+        
+        <div class="success-checkmark" style="color: #ef4444;">✓</div>
+        
+        <h2 style="font-size: 28px; margin-bottom: 10px;">Poruka uspješno poslana!</h2>
+        <p style="color: #94a3b8; font-size: 15px; margin-bottom: 30px;">Hvala vam što ste nas kontaktirali. Odgovorit ćemo vam u najkraćem mogućem roku.</p>
+        
+        <a href="{% url 'kontakt' %}" class="btn-kontakt-submit" style="text-decoration: none; display: inline-block;">Natrag na kontakt</a>
+    </div>
+</div>
+{% endblock %}

@@ -37,3 +37,13 @@ class ClanstvoForm(forms.Form):
         required=False,
         widget=forms.Textarea(attrs={'rows': 4, 'placeholder': 'Želite li nam nešto dodatno poručiti?', 'class': 'form-input'})
     )
+
+
+  
+
+class KontaktForm(forms.Form):
+    name = forms.CharField(label="Ime i prezime", widget=forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'Vaše ime i prezime'}))
+    email = forms.EmailField(label="E-mail", widget=forms.EmailInput(attrs={'class': 'form-input', 'placeholder': 'ime@primjer.hr'}))
+    phone = forms.CharField(label="Telefon", widget=forms.TextInput(attrs={'class': 'form-input', 'placeholder': '+385 91 123 4567'}))
+    subject = forms.CharField(label="Naslov", widget=forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'Kratak naslov poruke'}))
+    message = forms.CharField(label="Poruka", widget=forms.Textarea(attrs={'class': 'form-input', 'placeholder': 'Napišite svoju poruku...', 'rows': 5}))

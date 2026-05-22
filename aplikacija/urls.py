@@ -14,6 +14,8 @@ urlpatterns = [
     path('sponzori', views.sponzori_view, name='sponzori'),
     path('clanstvo', views.prijava_clanstvo, name='clanstvo'),
     path('uspjeh', views.uspjeh_stranica, name='uspjeh'),
+    path('kontakt', views.kontakt_view, name='kontakt'),
+    path('kontakt/uspjeh', views.kontakt_uspjeh_view, name='kontakt_uspjeh'),
 ]
 
 

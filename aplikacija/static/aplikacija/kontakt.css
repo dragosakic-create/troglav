@@ -1,0 +1,195 @@
+/* ==========================================
+   GLAVNI DIZAJN STRANICE (kontakt.css)
+   ========================================== */
+body {
+    background-color: #0d1424; /* Glavna tamno plava pozadina sa slike */
+     padding: 100px 0px 0px 0px; 
+    
+    margin-top: 0; /* Obavezno resetuj marginu na 0 */
+}
+
+.kontakt-page-container {
+    background-color: #0d1424;
+    color: #ffffff;
+    padding-top: 100px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Gornje plavo zaglavlje */
+.kontakt-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 20px 20px;
+}
+
+.kontakt-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.kontakt-header p {
+    color: #94a3b8;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Flexbox raspored: Podaci lijevo, forma desno */
+.kontakt-content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 60px; /* Razmak između blokova */
+}
+
+/* ==========================================
+   LIJEVA STRANA: PODACI I MAPA
+   ========================================== */
+.kontakt-info {
+    flex: 1;
+    min-width: 320px;
+}
+
+.kontakt-info h3, .kontakt-forma-container h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 30px 0;
+    border-bottom: 2px solid #1e293b;
+    padding-bottom: 12px;
+}
+
+/* Stilovi stavki s ikonama */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-icon {
+    font-size: 20px;
+    color: #e23131; /* Crveni akcent sa slike */
+    background-color: rgba(27, 81, 197, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+}
+
+.info-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #cbd5e1;
+}
+
+.info-item p {
+    font-size: 15px;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.map-title {
+    margin-top: 50px !important;
+}
+
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #233149;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    margin-top: 15px;
+}
+
+/* ==========================================
+   DESNA STRANA: DJANGO FORMA
+   ========================================== */
+.kontakt-forma-container {
+    flex: 1.2;
+    min-width: 350px;
+    background-color: #0f172a; /* Tamnija nijansa za formu */
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    height: fit-content;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+.required {
+    color: #308add; /* Crvena zvjezdica za obavezna polja */
+}
+
+/* Izgled Django polja */
+.kontakt-forma-container .form-input {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: #1e293b; /* Tamni inputi */
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.kontakt-forma-container .form-input:focus {
+    border-color: #268adc; /* Crveni obrub prati crveni gumb */
+    box-shadow: 0 0 0 4px rgba(38, 81, 220, 0.15);
+}
+
+.kontakt-forma-container .form-input::placeholder {
+    color: #64748b;
+}
+
+/* Crveni gumb za slanje */
+.btn-kontakt-submit {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: #268adc; /* Točna crvena boja sa slike */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.2s ease, transform 0.1s ease;
+}
+
+.btn-kontakt-submit:hover {
+    background-color: #1c7ab9;
+    box-shadow: 0 4px 15px rgba(38, 71, 220, 0.3);
+}
+
+.btn-kontakt-submit:active {
+    transform: scale(0.99);
+}
+
+@media (max-width: 900px) {
+    .kontakt-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
