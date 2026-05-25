@@ -69,22 +69,21 @@
         <div class="footer-section">
             <h4>Brzi linkovi</h4>
             <ul>
-                <li><a href="#">Upisi</a></li>
-                <li><a href="#">Škola nogometa</a></li>
-                <li><a href="#">Članstvo</a></li>
-                <li><a href="#">Vijesti</a></li>
-                <li><a href="#">Registracija</a></li>
-                <li><a href="#">Preuzmi aplikaciju</a></li>
-                <li><a href="#">Raspored treninga</a></li>
+                
+                
+                <li><a href="{% url 'clanstvo' %}">Članstvo</a></li>
+                <li><a href="{% url 'kontakt' %}">Kontakt</a></li>
+                <li><a href="{% url 'povijest' %}">Povijest kluba</a></li>
+                
             </ul>
         </div>
 
         <div class="footer-section">
             <h4>Momčadi</h4>
             <ul>
-                <li><a href="#">Seniori</a></li>
-                <li><a href="#">Juniori</a></li>
-                <li><a href="#">Kadeti</a></li>
+                <li><a href="{% url 'seniori' %}">Seniori</a></li>
+               <li><a href="{% url 'juniori' %}">Juniori</a></li>
+                <li><a href="{% url 'kadeti' %}">Kadeti</a></li>
             </ul>
         </div>
 
