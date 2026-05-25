@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}NK Troglav 1918{% endblock title %}</title>
     
-    <!-- FontAwesome za ikone (strelice) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="{% static 'base.css' %}">
@@ -21,21 +20,23 @@
             <span class="logo-text">NK TROGLAV</span>
         </a>
         
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        
         <ul class="nav-links">
             <li><a href="{% url 'pocetna' %}">Početna</a></li>
             
-            <!-- Padajući izbornik: KLUB -->
             <li class="dropdown">
-                <a href="#">Klub <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="dropdown-toggle">Klub <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="{% url 'povijest' %}">Povijest kluba</a></li>
                     <li><a href="{% url 'clanstvo' %}">Članstvo</a></li>
                 </ul>
             </li>
 
-            <!-- Padajući izbornik: NOGOMETNA ŠKOLA -->
             <li class="dropdown">
-                <a href="#">Nogometna Škola <i class="fas fa-chevron-down"></i></a>
+                <a href="#" class="dropdown-toggle">Nogometna Škola <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu">
                     <li><a href="{% url 'juniori' %}">Juniori</a></li>
                     <li><a href="{% url 'kadeti' %}">Kadeti</a></li>
@@ -55,7 +56,6 @@
 
 <footer class="main-footer">
     <div class="footer-container">
-        <!-- Logo i Ime kluba -->
         <div class="footer-section brand-info">
             <div class="footer-logo-box">
                 <img src="{% static 'aplikacija/slike/troglav-logo.png' %}" alt="NK Troglav Logo">
@@ -66,7 +66,6 @@
             </div>
         </div>
 
-        <!-- Brzi linkovi -->
         <div class="footer-section">
             <h4>Brzi linkovi</h4>
             <ul>
@@ -80,7 +79,6 @@
             </ul>
         </div>
 
-        <!-- Momčadi -->
         <div class="footer-section">
             <h4>Momčadi</h4>
             <ul>
@@ -90,9 +88,8 @@
             </ul>
         </div>
 
-        <!-- Kontakt -->
         <div class="footer-section contact-info">
-            <h4>Kontakt</h4>
+            <h4>Contact</h4>
             <div class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>Zgona 1, 80101 Livno</span>
@@ -108,7 +105,6 @@
         </div>
     </div>
 
-    <!-- Donji dio footera -->
     <div class="footer-bottom">
         <div class="footer-bottom-container">
             <div class="copyright">
@@ -123,6 +119,34 @@
         </div>
     </div>
 </footer>
+
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    // Otvaranje/zatvaranje glavnog hamburger menija
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('open');
+        navLinks.classList.toggle('active');
+    });
+
+    // Upravljanje padajućim izbornicima na klik (za mobitele)
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+                e.preventDefault(); 
+                const parentLi = toggle.parentElement;
+                
+                document.querySelectorAll('.dropdown').forEach(item => {
+                    if (item !== parentLi) item.classList.remove('open');
+                });
+                
+                parentLi.classList.toggle('open');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

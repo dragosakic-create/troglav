@@ -2,26 +2,26 @@
    GLAVNI DIZAJN STRANICE (kontakt.css)
    ========================================== */
 body {
-    background-color: #0d1424; /* Glavna tamno plava pozadina sa slike */
-     padding: 100px 0px 0px 0px; 
-    
-    margin-top: 0; /* Obavezno resetuj marginu na 0 */
+    background-color: #0d1424; 
+    margin: 0;
+    padding: 0;
 }
 
 .kontakt-page-container {
     background-color: #0d1424;
     color: #ffffff;
-    padding-top: 100px;
+    /* Gornji padding prilagođen visini desktop fiksnog navbara */
+    padding: 140px 0 60px 0; 
     min-height: 100vh;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 /* Gornje plavo zaglavlje */
 .kontakt-header {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px 20px 20px;
+    padding: 0 20px 20px 20px;
 }
 
 .kontakt-header h1 {
@@ -43,7 +43,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    gap: 60px; /* Razmak između blokova */
+    gap: 50px; /* Optimalan razmak između blokova */
 }
 
 /* ==========================================
@@ -51,7 +51,7 @@ body {
    ========================================== */
 .kontakt-info {
     flex: 1;
-    min-width: 320px;
+    min-width: 300px;
 }
 
 .kontakt-info h3, .kontakt-forma-container h3 {
@@ -72,15 +72,15 @@ body {
 
 .info-icon {
     font-size: 20px;
-    color: #e23131; /* Crveni akcent sa slike */
-    background-color: rgba(27, 81, 197, 0.1);
+    background-color: rgba(38, 138, 220, 0.1); /* Prilagođeno plavom tonu aplikacije */
     padding: 10px;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 22px;
-    height: 22px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0; /* Sprječava gužvanje ikone ako je tekst dugačak */
 }
 
 .info-item h4 {
@@ -98,7 +98,7 @@ body {
 }
 
 .map-title {
-    margin-top: 50px !important;
+    margin-top: 40px !important;
 }
 
 .map-container {
@@ -107,6 +107,11 @@ body {
     border: 1px solid #233149;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
     margin-top: 15px;
+    width: 100%;
+}
+
+.map-container iframe {
+    display: block; /* Uklanja prazan prostor ispod iframe-a */
 }
 
 /* ==========================================
@@ -114,7 +119,7 @@ body {
    ========================================== */
 .kontakt-forma-container {
     flex: 1.2;
-    min-width: 350px;
+    min-width: 300px;
     background-color: #0f172a; /* Tamnija nijansa za formu */
     padding: 40px;
     border-radius: 12px;
@@ -136,14 +141,18 @@ body {
 }
 
 .required {
-    color: #308add; /* Crvena zvjezdica za obavezna polja */
+    color: #ef4444; /* Crvena zvjezdica za obavezna polja */
 }
 
-/* Izgled Django polja */
-.kontakt-forma-container .form-input {
-    width: 100%;
+/* KLJUČNO: Stilovi koji direktno gađaju Django automatska generirana polja */
+.kontakt-forma-container input[type="text"],
+.kontakt-forma-container input[type="email"],
+.kontakt-forma-container input[type="number"],
+.kontakt-forma-container textarea,
+.kontakt-forma-container select {
+    width: 100% !important;
     padding: 14px 16px;
-    background-color: #1e293b; /* Tamni inputi */
+    background-color: #1e293b; 
     border: 1px solid #334155;
     border-radius: 8px;
     color: #ffffff;
@@ -151,45 +160,76 @@ body {
     outline: none;
     transition: all 0.3s ease;
     box-sizing: border-box;
+    font-family: inherit;
 }
 
-.kontakt-forma-container .form-input:focus {
-    border-color: #268adc; /* Crveni obrub prati crveni gumb */
-    box-shadow: 0 0 0 4px rgba(38, 81, 220, 0.15);
+.kontakt-forma-container textarea {
+    min-height: 120px;
+    resize: vertical; /* Korisnik može širiti samo gore/dolje da ne polomi dizajn */
 }
 
-.kontakt-forma-container .form-input::placeholder {
-    color: #64748b;
+/* Fokus stanja za Django polja */
+.kontakt-forma-container input:focus,
+.kontakt-forma-container textarea:focus,
+.kontakt-forma-container select:focus {
+    border-color: #268adc; 
+    box-shadow: 0 0 0 4px rgba(38, 138, 220, 0.15);
 }
 
-/* Crveni gumb za slanje */
+/* Gumb za slanje */
 .btn-kontakt-submit {
     display: block;
     width: 100%;
     padding: 14px;
-    background-color: #268adc; /* Točna crvena boja sa slike */
+    background-color: #268adc; 
     color: #ffffff;
     font-size: 16px;
     font-weight: 600;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 10px;
     transition: all 0.2s ease, transform 0.1s ease;
 }
 
 .btn-kontakt-submit:hover {
     background-color: #1c7ab9;
-    box-shadow: 0 4px 15px rgba(38, 71, 220, 0.3);
+    box-shadow: 0 4px 15px rgba(38, 138, 220, 0.3);
 }
 
 .btn-kontakt-submit:active {
     transform: scale(0.99);
 }
 
-@media (max-width: 900px) {
+/* ==========================================
+   MEDIA QUERIES (POTPUNA RESPONZIVNOST)
+   ========================================== */
+
+/* Za tablete i manje laptope */
+@media (max-width: 992px) {
+    .kontakt-page-container {
+        padding-top: 100px; /* Prilagođeno tvom novom manjem mobilnom navbaru */
+    }
+}
+
+/* Za mobitele */
+@media (max-width: 768px) {
+    .kontakt-header h1 {
+        font-size: 28px;
+    }
+    
     .kontakt-content {
-        flex-direction: column;
-        gap: 40px;
+        flex-direction: column; /* Prebacuje elemente u jedan stupac */
+        gap: 35px;
+        padding: 10px 20px;
+    }
+
+    .kontakt-forma-container {
+        padding: 25px 20px; /* Smanjuje unutarnje paddinge forme da stane više teksta */
+    }
+    
+    .map-container iframe {
+        height: 28px; /* Nešto niža mapa za lakši pregled na mobitelu */
+        height: 280px; 
     }
 }

@@ -409,6 +409,13 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* Kontejner za centriranje na ekranu */
+.league-data-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .data-glass-wrapper {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -433,6 +440,16 @@ body {
   letter-spacing: 1px;
 }
 
+.round-nav {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #8b949e;
+  transition: color 0.2s;
+}
+.round-nav:hover {
+  color: #ffffff;
+}
+
 .match-card {
   background: #21262d;
   border-radius: 20px;
@@ -450,6 +467,10 @@ body {
   text-transform: uppercase;
 }
 
+/* Klase za stabilno ravnanje */
+.team-right { text-align: right; }
+.team-left { text-align: left; }
+
 .match-score-box {
   background: #0d1117;
   padding: 8px 20px;
@@ -458,6 +479,7 @@ body {
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0 20px;
+  white-space: nowrap;
 }
 
 .table-container {
@@ -511,7 +533,7 @@ body {
   font-weight: bold;
 }
 
-/* Scrollbar da bude neprimjetan */
+/* Vertikalni scrollbar za tablicu */
 .table-responsive {
   max-height: 600px;
   overflow-y: auto;
@@ -526,6 +548,61 @@ body {
   border-radius: 10px;
 }
 
+/* ==========================================================================
+   POTPUNA RESPONZIVNOST ZA REZULTATE I TABLICU (Dodano)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    /* Prebacuje s dva stupca na jedan stupac (Rezultati idu gore, tablica dolje) */
+    .data-glass-wrapper {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .league-data-section {
+        padding: 30px 0;
+    }
+    
+    .data-glass-wrapper {
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    /* Prilagodba kartice utakmica za male ekrane */
+    .match-card {
+        grid-template-columns: 1fr; /* Svi elementi idu u novi red */
+        gap: 8px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .match-team.team-right, 
+    .match-team.team-left {
+        text-align: center !important; /* Na mobitelu centriramo imena klubova */
+        font-size: 0.85rem;
+    }
+
+    .match-score-box {
+        margin: 5px auto;
+        display: inline-block;
+        width: fit-content;
+    }
+
+    /* Omogućavanje horizontalnog skrolanja tablice ako je ekran presitni (npr. iPhone SE) */
+    .table-x-scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .league-table th, 
+    .league-table td {
+        padding: 12px 6px; /* Blago smanjujemo padding u tablici da više stane */
+        font-size: 0.85rem;
+    }
+}
 /*sponzori*/
 /* Sekcija za sponzore */
 .sponsors-section {

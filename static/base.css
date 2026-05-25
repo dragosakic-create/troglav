@@ -356,3 +356,185 @@ html {
         text-align: center;
     }
 }
+/* ==========================================================================
+   6. RESPONZIVNI HAMBURGER NAVBAR (Dodaj na kraj datoteke)
+   ========================================================================== */
+
+/* Skrivanje hamburger gumba na računalima */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1200;
+}
+
+/* Kreiranje tri linije hamburgera pomoću CSS-a */
+.hamburger {
+    display: block;
+    position: relative;
+    width: 28px;
+    height: 3px;
+    background: white;
+    transition: background 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+/* Razmak između linija hamburgera */
+.hamburger::before { top: -8px; }
+.hamburger::after { bottom: -8px; }
+
+/* Animacija pretvaranja u "X" kada se izbornik otvori */
+.nav-toggle.open .hamburger {
+    background: transparent;
+}
+.nav-toggle.open .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+.nav-toggle.open .hamburger::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+/* ==========================================================================
+   7. PRAVILA ZA MOBITELE I TABLETE (Ekran manji od 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* --- GLAVNI NAVBAR I LOGO --- */
+    .navbar {
+        padding: 15px 0; /* Smanjujemo visinu navbara na mobitelu */
+    }
+
+    .nav-container {
+        padding: 0 25px; /* Manji razmak od rubova ekrana */
+    }
+
+    .nav-logo img {
+        height: 55px; /* Smanjujemo veličinu logotipa da stane */
+    }
+
+    .nav-toggle {
+        display: block; /* Prikazujemo hamburger gumb */
+    }
+
+    /* --- BOČNI PANELI (GLAVNI IZBORNIK) --- */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Inicijalno sakriveno desno izvan ekrana */
+        width: 80%; /* Širina menija na mobitelu */
+        max-width: 320px;
+        height: 100vh;
+        background: rgba(10, 11, 13, 0.98);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 100px 40px 40px 40px; /* Prostor na vrhu da se ne prekrije hamburger */
+        gap: 15px;
+        transition: right 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        overflow-y: auto; /* Omogućuje skrolanje ako ima previše linkova */
+    }
+
+    /* Klasa koju JavaScript dodaje za ulaženje menija na ekran */
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .nav-links li:hover {
+        position: relative !important; /* Sprječava skakanje roditeljskih elemenata */
+    }
+
+    /* --- RESET DESKTOP HOVERA ZA GLAVNE LINKOVE --- */
+    .nav-links a {
+        font-size: 1.1rem;
+        width: 100%;
+        justify-content: space-between; /* Strelice idu skroz desno */
+        outline: none !important; /* UKLANJA BIJELI OKVIR sa slike */
+        border: none !important;
+    }
+
+    .nav-links a:hover {
+        color: #fff !important; /* Zadržava bijelu boju teksta na klik/hover */
+        background: transparent !important; /* Sprječava neželjene pozadine */
+        outline: none !important; /* Osiguranje protiv bijelog okvira */
+        border: none !important;
+    }
+
+    /* --- PADAJUĆI IZBORNICI (KLUB, ŠKOLA) --- */
+    .dropdown-menu {
+        display: none; /* Sakriveno dok se ne klikne */
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none !important; /* Isključuje desktop centriranje */
+        width: 100%;
+        background: rgba(255, 255, 255, 0.03) !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 8px;
+        margin-top: 10px;
+        padding: 5px 10px !important;
+        animation: none !important; /* Isključujemo desktop animaciju */
+    }
+
+    /* Klasa koju JS dodaje na klik za otvaranje podmenija */
+    .nav-links li.dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    /* Stavke unutar padajućeg izbornika (Juniori, Kadeti...) */
+    .dropdown-menu li a {
+        padding: 10px 15px !important; /* Fiksni početni padding */
+        font-size: 0.95rem;
+        text-transform: none;
+        display: block !important;
+        width: 100% !important;
+        color: #a0a0a0 !important;
+    }
+
+    /* POPRAVAK: Drži tekst "ukopanim" na hover bez micanja ulijevo/udesno */
+    .dropdown-menu li a:hover {
+        padding-left: 15px !important; /* MORA biti isti kao obični padding-left gore */
+        background: rgba(255, 255, 255, 0.05) !important; /* Blaga siva pozadina pri dodiru */
+        color: #fff !important;
+    }
+
+    /* Okretanje strelice prema gore na mobitelu kada je otvoreno */
+    .nav-links li.dropdown.open > a i {
+        transform: rotate(180deg);
+    }
+
+    /* Potpuno isključivanje desktop hover pravila koja kvare izgled na mobitelu */
+    .nav-links li:hover .dropdown-menu {
+        display: none;
+    }
+    
+    .nav-links li.dropdown.open:hover .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu::before {
+        display: none !important; /* Uklanja nevidljivi "most" s desktopa */
+    }
+}
